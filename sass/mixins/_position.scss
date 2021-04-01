@@ -1,0 +1,7 @@
+// Sticky
+@mixin sticky($top: 0, $right: 0, $left: 0){
+  position: sticky;
+  top: $top;
+  right: $right;
+  left: $left;
+}

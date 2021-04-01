@@ -1,0 +1,273 @@
+// ------ 폼 서식 시작 ------//
+// ------ 입력 서식(한줄 글상자) 그룹 시작 ------//
+.inputWrapper{
+  position: relative;
+  @include flexbox(row, flex-start, center, nowrap);
+  border-bottom: 1px solid currentColor;
+  padding: 0 8px;
+}
+// ------ 입력 서식(한줄 글상자) 그룹 종료 ------//
+
+// ------ 입력 서식(한줄 글상자) 시작 ------//
+.input{
+  -webkit-appearance: none;
+  display: block;
+  padding: 16px 16px 0 0;
+  width: 100%;
+  height: 48px;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  flex: 1 1 0;
+  background: transparent no-repeat 100% 22px / 16px 16px;
+  margin-right: 8px;
+
+  // Chrome, Safari, Firefox의 글자 색상
+  &::placeholder {
+    color: $grayscaleSnow;
+  }
+
+  // IE, Edge 글자 색상
+  &:-ms-input-placeholder {
+    color: $grayscaleSnow;
+  }
+
+  // IE input 요소의 X 버튼 제거 
+  &::-ms-clear, 
+  &::-ms-reveal {
+    display: none;
+  }
+
+  &:focus{
+    box-shadow: none;
+  }
+
+  // 입력 값이 유효할 때 input 요소에 적용될 배경 이미지
+  &--valid{
+    background-image: url(../images/icon-checked.svg);
+  }
+
+  // 입력 값이 유효하지 않을 때 input 요소에 적용될 배경 이미지
+  &--invalid{
+    background-image: url(../images/icon-warning.svg);
+  } 
+  
+  // ------ 입력 서식 상태에 따른 label 스타일 시작 ------//
+  // 기본 상태
+  &--normal + .label{
+    order: -1;
+    font-size: 1.8rem;
+  }
+
+  // 기본 상태가 아닌 경우 (:not 선택자를 사용할 때)
+  &:focus + .label,
+  &:not(.input--normal) + .label {
+    position: absolute;
+    transition: all 300ms;
+  }
+
+  // 유효한 값 또는 유효하지 않은 값이 입력되거나 포커스 된 상태
+  &:focus + .label,
+  &--focus + .label,
+  &--valid + .label,
+  &--invalid + .label {
+    font-size: 1.3rem;
+    transform: translate(0, -16px);
+  }
+  // ------ 입력 서식 상태에 따른 label 스타일 종료 ------//
+}
+// ------ 입력 서식 종료 ------//
+
+// ------ 에러메시지 시작 ------//
+.errorMessage{
+  display: none;
+  font-size: 1.2rem;
+  padding: 3px 0 3px 8px;
+  position: absolute;
+  left: 0;
+  bottom: -25px;
+}
+
+// 입력 값이 오류일 에러메시지가 보이도록 설정
+.input--invalid + .errorMessage,
+.input--invalid + .label + .errorMessage{
+  display: block;
+}
+// ------ 에러메시지 종료 ------//
+
+// ------ 버튼 스타일 시작 ------//
+.buttonWrapper{
+  @include flexbox(row, space-between, center, wrap);
+}
+.button{
+  position: relative;
+  cursor: pointer;
+  background: transparent;
+  padding: 0;
+  border: 0;
+}
+
+.button--normal{
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 8px;
+  text-align: center;
+  display: block;
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+}  
+.button--stroke{
+  opacity: 0.7;
+  border: 1px solid $grayscaleWhite;
+  color: $grayscaleSnow;
+  background-color: transparent;
+
+  &:hover,
+  &:focus{
+    opacity: 1;
+  }
+}
+.button--fill{
+  color: $primaryBlue;
+  background-color: $grayscaleWhite;
+}
+
+.icon--loading{
+  cursor: not-allowed;
+  @include icon{
+    background-image: url(../images/icon-arrow-loading.svg) ;
+    transform-origin: center;
+    animation: spinner 0.2s linear infinite;
+
+  }
+}
+
+.icon--arrowDarkBlue{
+  @include icon{
+    background: url(../images/icon-arrow-darkblue.svg);
+  }
+}
+.icon--arrowWhite{
+  @include icon{
+    background: url(../images/icon-arrow-white.svg);
+  }
+}
+
+.button--visible,
+.button--hidden{
+  align-self: flex-end;
+  width: 16px;
+  height: 16px;
+  margin-bottom: 10px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+}
+.button--visible{
+  background-image: url(../images/icon-visible.svg);
+}
+
+.button--hidden {
+  background-image: url(../images/icon-invisible.svg);
+}
+
+.is--disabled{
+  cursor: not-allowed;
+  opacity: 0.8;
+  @include icon{
+    background: url(../images/icon-arrow-disabled.svg);
+  }
+}
+.button--fill.is--disabled{
+  background-color: $grayscaleWhite;
+  color: $accentAmber;
+}
+.button--stroke.is--disabled{
+  border-color: $grayscaleWhite;
+  color: $accentAmber;
+}
+// ------ 버튼 스타일 종료 ------//
+
+// ------ 체크박스 서식 그룹 시작 ------//
+.checkboxWrapper{
+  position: relative;
+  @include flexbox(row, flex-start, center, nowrap);
+}
+// ------ 체크박스 서식 그룹 종료 ------//
+
+// ------ 체크박스 시작 ------//
+// icon 스타일에 대해 다시 고민해 보기!!!
+.checkbox{
+  opacity: 0;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+// ------ 체크박스 레이블 시작 ------//
+.checkboxWrapper .label{
+  user-select: none;
+  cursor: pointer;
+  margin-top: 4px;
+  font-size: 1.2rem;
+}
+// ------ 체크박스 레이블 종료 ------//
+
+// ------ 체크박스 배경이미지 시작 ------//
+.icon--check{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin-top: 1px;
+  margin-right: 4px;
+  background: url(../images/icon-un-checked-square.svg) no-repeat 50% 50%;
+}
+
+// 체크박스가 선택 되었을 때 배경이미지 재설정
+.checkbox:checked + .icon--check{
+   background-image: url(../images/icon-checked-square.svg);
+}
+// ------ 체크박스 배경이미지 종료 ------//
+// ------ 체크박스 종료 ------//
+// ------ 폼 서식 종료 ------//
+
+// ------ 검색 폼 (searchForm) 시작 ------//
+// 검색 폼 스타일을 기존 컴포넌트를 활용하여 다시 만들어보기!!!
+.searchForm{
+  &__wrapper{
+    @include flexbox(row, flex-start, center, nowrap);
+    height: 26px;
+    position: relative;
+    font-size: 1.4rem;
+  }
+
+  // ------ 검색 분류 선택 상자 (select 요소) 시작 ------//
+  &__select{
+    user-select: none;
+    width: 80px;
+    margin-right: 5px;
+    border: 0;
+    border-radius: 3px;
+    // background: $grayscaleSnow;
+  }
+  // ------ 검색 분류 선택 상자 (select 요소) 종료 ------//
+
+  // ------ 검색어 입력 상자 (input 요소) 시작 ------//
+  &__input{
+    width: 100%;
+    border: 0;
+    padding: 6px;
+    flex-grow: 1;
+    height: 26px;
+    border: 0;
+  }
+  // ------ 검색어 입력 상자 (input 요소) 종료 ------//
+}
+// ------ 검색 폼 (searchForm) 종료 ------//
+
+

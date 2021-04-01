@@ -1,0 +1,37 @@
+// ------ body 플렉스 컨테이너 ------//
+.bodyContainer{
+  @include flexbox(column);
+  min-height: 100vh;
+
+  // 웹 브라우저 화면 아래에 푸터를 배치하는 2가지 방법
+  .main{
+    flex: 1 1 0;
+  }
+  .footer{
+    margin-top: auto;
+  }
+}
+
+// ------ 플렉스 컨테이너 ------//
+.flexContainer{
+  @include flexbox;
+}
+
+// ------ 고정 크기 컨테이너 ------//
+.container{
+  max-width: 740px;
+  @include autoMargin;
+
+  &__full{
+    position: relative;
+    left: 50%;
+    // width: 100vw로 인해 body 영역에 가로 스크롤바가 나타난다.
+    // 이를 헤결하기 위해 루트 요소인 html에 overflow-x: hidden;을 추가해야 한다.
+    width: 100vw;
+    margin-left: -50vw;
+  }
+}
+// ------ 유동형 크기 컨테이너 ------//
+.containerFluid{
+  width: 100%;
+}
