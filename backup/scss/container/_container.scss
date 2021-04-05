@@ -1,0 +1,26 @@
+// container 관련 class utils -------------------------------------------------- /
+// Block Container
+.container{
+  display: block;
+}
+.container--fluid{
+  width: 100%;
+}
+.container--fixed{
+  width: 740px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.container--full{
+  // width: 100vw로 인해 body 영역에 가로 스크롤바가 나타난다.
+  // 이를 헤결하기 위해 루트 요소인 html에 overflow-x: hidden;을 추가해야 한다.
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+}
+
+.container--bgColor{
+  
+}

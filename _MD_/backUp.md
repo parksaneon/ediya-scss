@@ -341,7 +341,7 @@ JavaScript로 컨트롤하게 되면서 불필요해진 HTML 하드 코딩 마�
 
   ```html
   <table class="news__press-table">
-    <caption class="a11y-hidden">이디야 소식 안내</caption>
+    <caption class="a11yHidden">이디야 소식 안내</caption>
     <thead>
       <tr>
         <th scope="col">순서</th>

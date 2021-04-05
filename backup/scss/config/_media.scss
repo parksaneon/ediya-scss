@@ -1,0 +1,38 @@
+
+// Breakpoints --------------------------------------------------------------- /
+$breakpoints: (
+  'sm': em(640),
+  'md': em(768),
+  'lg': em(1024),
+  'xl': em(1280),
+  '2xl': em(1440),
+  '3xl': em(1920),
+);
+
+
+$breakpoint: 768px;
+
+@mixin mobile {
+  @media screen and (max-width: #{$breakpoint - 1}) {
+    @content;
+  }
+}
+@mixin tabletOnly {
+  @media screen and (min-width: #{$breakpoint}) and (max-width: 940px){
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: #{$breakpoint}) {
+    @content;
+  }
+}
+
+// Source mixin
+@mixin media($mediaType) {
+  width: 100%;
+  padding-right: $padding-x;
+  padding-left: $padding-x;
+  margin-right: auto;
+  margin-left: auto;
+}

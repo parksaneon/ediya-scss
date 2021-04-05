@@ -1,0 +1,25 @@
+// 기본값 설정 -------------------------------------------------------------------- /
+$rootSize: 16px !default;
+
+:root{
+  font-size: $rootSize;
+}
+body {
+  font-size: inherit;
+}
+
+// 단위를 제거하는 함수 --------------------------------------------------------------- /
+@function removeUnit($value){
+  @return ($value / ($value * 0 + 1));
+}
+
+// px을 rem 단위로 변경하는 함수 ------------------------------------------------------- /
+@function rem($size, $base: $rootSize){
+  @return (removeUnit($size / $base)) * 1rem;
+}
+
+// px을 em 단위로 변경하는 함수 ------------------------------------------------------- /
+@function em($size, $base: $rootSize){
+  @return (removeUnit($size / $base)) * 1em;
+}
+

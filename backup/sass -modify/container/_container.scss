@@ -1,0 +1,23 @@
+@mixin containerFull($width: 100vw){
+  // width: 100vw로 인해 body 영역에 가로 스크롤바가 나타난다.
+  // 이를 헤결하기 위해 루트 요소인 html에 overflow-x: hidden;을 추가해야 한다.
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+}
+@mixin containerFluid($width: 100%, $paddingX: 0){
+  padding-left: $paddingX;
+  padding-right: $paddingX;
+}
+@mixin containerFixed($width, $paddingX: 0, $marginX: auto){
+  padding-left: $paddingX;
+  padding-right: $paddingX;
+  @include autoMargin($marginX: auto);
+}
+
+@mixin autoMargin($marginX: auto) {
+  margin-left: $marginX;
+  margin-right: $marginX;
+}

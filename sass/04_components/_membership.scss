@@ -1,0 +1,130 @@
+// 로그인, 회원가입 (.membership) 공통 ------------------------------------------------ /
+.membership{
+  color: $grayscaleWhite;
+
+  @include desktop{
+    margin: 0 auto;
+    width: 540px;
+  }
+
+  // 제목 및 단락 스타일 --------------------------------------------------------------- /
+  &__title,
+  &__enDescription,
+  &__description{
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+  // 제목 스타일 ----------------------------------------------------------------- /
+  &__title{
+    font-weight: 100;
+    font-size: rem(36px);
+    margin: 50px 0 24px;
+  }
+
+  // 영문 단락 스타일 ----------------------------------------------------------------- /
+  &__enDescription{
+    font-size: rem(18px);
+  }
+
+  // 단락 스타일 -------------------------------------------------------------------- /
+  &__description{
+    font-size: rem(12px);
+  }
+
+  // 이메일, 패스워드 입력 서식 ------------------------------------------------------------ /
+  &__email,
+  &__password{
+    align-items: flex-end;
+    height: 48px;
+
+    @include mobile{
+      margin-top: 52px;
+    }
+    @include desktop{
+      margin-top: 42px;
+    }
+  }
+
+  &__password{
+    .buttonPassword{
+      align-self: flex-end;
+      background-color: green;
+    }
+  }
+
+  &:focus{
+    outline: none;
+    box-shadow: none;
+  }
+
+  .input{
+    background: no-repeat 100% 6px / 16px 16px;
+    margin-right: 8px;
+
+    &.is--valid{
+      background-image: url(../images/icon-checked.svg);
+    }
+    &.is--invalid{
+      background-image: url(../images/icon-warning.svg);
+    }
+  }
+
+  .input + .label{
+    font-size: rem(18px);
+  }
+
+  .input:focus + .label,
+  .input:not(.input) + .label {
+    position: absolute;
+    transition: all 300ms;
+  }
+
+  .input:focus + .label,
+  .input.is--valid + .label,
+  .input.is--invalid + .label {
+    font-size: rem(13px);
+    transform: translate(8px, -16px);
+  }
+
+  .errorMessage{
+    display: none;
+    font-size: rem(12px);
+    padding: 3px 0 3px 8px;
+    position: absolute;
+    left: 0;
+    bottom: -25px;
+  }
+
+  // 입력 값이 오류일 에러메시지가 보이도록 설정
+  .input.is--invalid + .errorMessage,
+  .input.is--invalid + .label + .errorMessage{
+    display: block;
+  }
+  // 체크박스 스타일 ------------------------------------------------------------------ /
+  &__saveEmail{
+    margin-top: 15px;
+  }
+
+  // 버튼 크기 및 여백 ---------------------------------------------------------------- /
+  //  가입하기, 로그인, 회원가입 버튼 공통
+  &__buttons{
+    @include flexbox(row, space-between, center, nowrap);
+    @include mobile{
+      margin-top: 133px;
+    }
+    @include desktop{
+      margin-top: 70px;
+    }
+    
+    .button{
+      @include mobile{
+        width: 100%;
+        margin-bottom: 15px;
+      }
+      @include desktop{
+        width: 260px;
+      }
+    }
+  }
+}

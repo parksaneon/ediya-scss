@@ -1,9 +1,12 @@
 {
   "scripts": {
+    "test": "sass scss:stylesheet",
+    "test:watch": "npm run test -- --watch",
     "sass": "sass sass:css",
     "watch": "npm run sass -- --watch"
   },
   "dependencies": {
+    "@euid/scss-mixins": "^0.2.0",
     "minireset.css": "^0.0.7",
     "normalize-scss": "^7.0.1",
     "sass": "^1.32.8",

@@ -1,0 +1,28 @@
+.formControl{
+  position: relative;
+  @include flexbox(row, flex-start, center, nowrap);
+  border-bottom: 1px solid currentColor;
+
+  .label{
+    font-size: rem(18px);
+    order: -1;
+  }
+
+  .input{
+    -webkit-appearance: none;
+    width: 100%;
+    flex: 1 1 0;
+    font-size: rem(16px);
+    border: 0;
+    padding: 6px 0 2px 8px;
+    border: 0;
+    margin-right: 8px;
+    background: transparent;
+
+    // IE input 요소의 X 버튼 제거 
+    &::-ms-clear, 
+    &::-ms-reveal {
+      display: none;
+    }
+  }
+}

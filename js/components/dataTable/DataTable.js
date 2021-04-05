@@ -8,7 +8,7 @@
     <div class="news__press-container">\
       {{searchForm}}\
       <table class="news__press-table">\
-        <caption class="a11y-hidden">{caption}</caption>\
+        <caption class="a11yHidden">{caption}</caption>\
         <colgroup>\
           <col />\
           <col />\
