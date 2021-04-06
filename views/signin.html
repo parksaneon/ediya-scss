@@ -53,8 +53,8 @@
                 <div class="membership__email is--invalid">
                   <div class="formControl">
                     <!-- aria-invalid 속성은 1.2에서 global 속성에서 widget 계열의 역할에만 사용되도록 범위가 축소 되었음. -->
-                    <input class="input" type="email" id="userEmail" name="userEmail" aria-required="true" aria-invalid="false" aria-describedby="emailFeedback" />
-                    <label class="label" for="userEmail">이메일</label>
+                    <input class="input" type="email" id="userEmail" name="userEmail" required aria-required="true" aria-invalid="false" aria-describedby="emailFeedback" />
+                    <label class="label" for="userEmail" autocomplete="email">이메일</label>
                     <!-- .is--valid 클래스가 적용되면 .iconNone 클래스를 제거하고 해당 요소에 .icon과 .iconChecked 클래스를 추가하여 입력 값이 유효한 값임을 표시 한다. -->
                     <!-- .is--invalid 클래스가 적용되면 .iconNone 클래스를 제거하고 해당 요소에 .icon과 .iconWarning 클래스를 추가하여 입력 값이 오류임을 표시함과 동시에 오류 메시지를 읽어줄 수 있도록 구현이 필요. -->
                     <!-- <span class="iconNone"></span> -->
@@ -65,7 +65,7 @@
                 </div>
                 <div class="membership__password">
                   <div class="formControl">
-                    <input class="input" type="password" id="userPassword" name="userPassword" aria-required="true" aria-invalid="false" aria-describedby="passwordFeedback" />
+                    <input class="input" type="password" id="userPassword" name="userPassword" required aria-required="true" aria-invalid="false" aria-describedby="passwordFeedback" autocomplete="current-password" />
                     <label class="label" for="userPassword">패스워드</label>
                     <!-- visible, invisible 상태에 따라 aria-label이 변경되도록 자바스크립트 설정이 필요함 -->
                     <button type="button" class="buttonNone buttonPassword" aria-label="패스워드 보기"><span class="icon iconInVisible"></span></button>

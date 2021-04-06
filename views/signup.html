@@ -66,7 +66,7 @@
                 <div class="membership__email">
                   <div class="formControl">
                     <!-- aria-invalid 속성은 1.2에서 global 속성에서 widget 계열의 역할에만 사용되도록 범위가 축소 되었음. -->
-                    <input class="input" type="email" id="userEmail" name="userEmail" aria-required="true" aria-invalid="false" aria-describedby="emailFeedback" />
+                    <input class="input" type="email" id="userEmail" name="userEmail" required aria-required="true" aria-invalid="false" aria-describedby="emailFeedback" autocomplete="email" />
                     <label class="label" for="userEmail">이메일</label>
                     <span class="iconNone"></span>
                     <span class="icon iconChecked"></span>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="membership__password">
                   <div class="formControl">
-                    <input class="input" type="password" id="userPassword" name="userPassword" aria-required="true" aria-invalid="false" aria-describedby="passwordFeedback" />
+                    <input class="input" type="password" id="userPassword" name="userPassword" required aria-required="true" aria-invalid="false" aria-describedby="passwordFeedback" autocomplete="new-password" />
                     <label class="label" for="userPassword">패스워드</label>
                     <!-- visible, invisible 상태에 따라 aria-label이 변경되도록 자바스크립트 설정이 필요함 -->
                     <button type="button" class="buttonNone buttonPassword" aria-label="패스워드 보기"><span class="icon iconVisible"></span></button>
@@ -89,7 +89,7 @@
                 <!-- 패스워드 확인의 경우 기존 패스워드와 일치하는지 여부를 검증하는 절차가 필요함. -->
                 <div class="membership__passwordConfirm">
                   <div class="formControl">
-                    <input class="input" type="password" id="userPasswordConfirm" name="userPasswordConfirm" aria-required="true" aria-invalid="false" aria-describedby="passwordFeedbackConfirm" />
+                    <input class="input" type="password" id="userPasswordConfirm" name="userPasswordConfirm" required aria-required="true" aria-invalid="false" aria-describedby="passwordFeedbackConfirm" autocomplete="new-password" />
                     <label class="label" for="userPasswordConfirm">패스워드 확인</label>
                     <!-- visible, invisible 상태에 따라 aria-label이 변경되도록 자바스크립트 처리가 필요함 -->
                     <button type="button" class="buttonNone buttonPassword" aria-label="패스워드 보기"><span class="icon iconInVisible"></span></button>
@@ -99,7 +99,6 @@
                   </div>
                   <span role="alert" id="passwordFeedbackConfirm" class="errorMessage">패스워드가 일치하지 않습니다.</span>
                 </div>
-
                 <div class="membership__buttons buttonGroup">
                   <!-- a 요소를 사용할 경우 disable 상태에 대한 처리 고민 ? -->
                   <button type="submit" class="button buttonSignin buttonPrimary">가입하기<span class="icon iconLoading"></span></button>
