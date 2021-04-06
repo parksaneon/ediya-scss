@@ -70,15 +70,12 @@
               <form class="searchForm" id="newsPressSearch" action="#" method="GET">
                 <fieldset>
                   <legend>언론 속 이디야 검색 폼</legend>
-                  <div class="newsPress__searchWrapper">
-                    <div class="newsPress__select formControl" aria-label="뉴스 검색범위 선택">
-                      <select class="select newsPress__select" name="newsPressSelect" id="newsPressSelect">
-                        <option value="Title">제목</option>
-                        <option value="Content">내용</option>
-                      </select>
-                      <label class="label a11yHidden" for="newsPressSelect">뉴스 검색범위 선택</label>
-                    </div>
-                    <div class="newsPress__keyword formControl">
+                  <div class="newsPress__searchSelect">
+                    <select class="select " name="newsPressSelect" id="newsPressSelect" aria-label="뉴스 검색범위 선택">
+                      <option value="Title">제목</option>
+                      <option value="Content">내용</option>
+                    </select>
+                    <div class="newsPress__searchKeyword formControl">
                       <input type="search" name="newsPressKeyword" class="input" placeholder="검색어 입력(예: 이디야)" aria-required="true" aria-label="뉴스 검색어" id="newsPressKeyword">
                       <label class="label a11yHidden" for="newsPressKeyword">뉴스 검색어</label>
                       <button type="button" class="buttonNone buttonSearch" aria-label="검색">

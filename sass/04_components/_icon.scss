@@ -6,6 +6,12 @@
   display: inline-block;
   width: 16px;
   height: 16px;
+  vertical-align: middle;
+
+  // 아이콘 요소를 보이지 않도록 설정할 때
+  &None{
+    display: none;
+  }
 
   &::before{
     content: '';
@@ -66,14 +72,21 @@
   // 체크박스 해제 (Square 형) -------------------------------------------------------------------- /
   &UncheckedSquare{
     &::before{
-      background-image: url(../images/icon-un-checked-square.svg);
+      background-image: url(../images/icon-unchecked-square.svg);
     }
   }
 
   // 체크 상태 (Circle 형) -------------------------------------------------------------------- /
-  &UncheckedSquare{
+  &Checked{
     &::before{
-      background-image: url(../images/icon-un-checked-square.svg);
+      background-image: url(../images/icon-checked.svg);
+    }
+  }
+
+  // 오류 및 경고 상태 -------------------------------------------------------------------- /
+  &Warning{
+    &::before{
+      background-image: url(../images/icon-warning.svg);
     }
   }
 

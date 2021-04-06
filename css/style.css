@@ -722,6 +722,10 @@ button {
   display: inline-block;
   width: 16px;
   height: 16px;
+  vertical-align: middle;
+}
+.iconNone {
+  display: none;
 }
 .icon::before {
   content: "";
@@ -755,10 +759,13 @@ button {
   background-image: url(../images/icon-checked-square.svg);
 }
 .iconUncheckedSquare::before {
-  background-image: url(../images/icon-un-checked-square.svg);
+  background-image: url(../images/icon-unchecked-square.svg);
 }
-.iconUncheckedSquare::before {
-  background-image: url(../images/icon-un-checked-square.svg);
+.iconChecked::before {
+  background-image: url(../images/icon-checked.svg);
+}
+.iconWarning::before {
+  background-image: url(../images/icon-warning.svg);
 }
 .iconArrowUp::before {
   background-image: url(../images/icon-arrow-up.svg);
@@ -796,13 +803,14 @@ button {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
-  border-bottom: 1px solid currentColor;
 }
-.formControl .label {
+
+.label {
   font-size: 1.125rem;
   order: -1;
 }
-.formControl .input {
+
+.input {
   -webkit-appearance: none;
   width: 100%;
   flex: 1 1 0;
@@ -813,8 +821,49 @@ button {
   margin-right: 8px;
   background: transparent;
 }
-.formControl .input::-ms-clear, .formControl .input::-ms-reveal {
+.input::-ms-clear, .input::-ms-reveal {
   display: none;
+}
+
+.checkbox {
+  opacity: 0;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: transparent;
+  cursor: pointer;
+}
+
+.checkbox ~ .label {
+  margin-top: 3px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.checkbox + .icon {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-right: 8px;
+}
+
+.checkbox:focus + .icon {
+  box-shadow: 0 0 0 4px #24388d;
+}
+
+.checkbox + .iconCheckedToggleSquare {
+  background-image: url(../images/icon-unchecked-square.svg);
+}
+
+.checkbox:checked + .iconCheckedToggleSquare {
+  background-image: url(../images/icon-checked-square.svg);
 }
 
 .pagination {
@@ -949,81 +998,67 @@ button {
 .membership__description {
   font-size: 0.75rem;
 }
-.membership__email, .membership__password {
-  align-items: flex-end;
-  height: 48px;
-}
 @media screen and (max-width: 767px) {
-  .membership__email, .membership__password {
+  .membership__email, .membership__password, .membership__passwordConfirm {
     margin-top: 52px;
   }
 }
 @media screen and (min-width: 768px) {
-  .membership__email, .membership__password {
+  .membership__email, .membership__password, .membership__passwordConfirm {
     margin-top: 42px;
   }
 }
-.membership__password .buttonPassword {
-  align-self: flex-end;
-  background-color: green;
+.membership__email .formControl, .membership__password .formControl, .membership__passwordConfirm .formControl {
+  border-bottom: 2px solid currentColor;
 }
-.membership:focus {
-  outline: none;
-  box-shadow: none;
+.membership__email .icon, .membership__password .icon, .membership__passwordConfirm .icon {
+  top: 6px;
 }
 .membership .input {
-  background: no-repeat 100% 6px/16px 16px;
+  color: #fefefe;
+  height: 48px;
+  padding: 22px 8px 8px;
+}
+.membership .buttonPassword {
   margin-right: 8px;
-}
-.membership .input.is--valid {
-  background-image: url(../images/icon-checked.svg);
-}
-.membership .input.is--invalid {
-  background-image: url(../images/icon-warning.svg);
-}
-.membership .input + .label {
-  font-size: 1.125rem;
-}
-.membership .input:focus + .label,
-.membership .input:not(.input) + .label {
-  position: absolute;
-  transition: all 300ms;
-}
-.membership .input:focus + .label,
-.membership .input.is--valid + .label,
-.membership .input.is--invalid + .label {
-  font-size: 0.8125rem;
-  transform: translate(8px, -16px);
 }
 .membership .errorMessage {
   display: none;
   font-size: 0.75rem;
   padding: 3px 0 3px 8px;
-  position: absolute;
-  left: 0;
-  bottom: -25px;
 }
-.membership .input.is--invalid + .errorMessage,
-.membership .input.is--invalid + .label + .errorMessage {
+.membership__email.is--invalid .errorMessage, .membership__password.is--invalid .errorMessage, .membership__passwordConfirm.is--invalid .errorMessage {
   display: block;
+}
+.membership__email .input:focus + .label, .membership__email.is--valid .label, .membership__email.is--invalid .label, .membership__password .input:focus + .label, .membership__password.is--valid .label, .membership__password.is--invalid .label, .membership__passwordConfirm .input:focus + .label, .membership__passwordConfirm.is--valid .label, .membership__passwordConfirm.is--invalid .label {
+  position: absolute;
+  transition: all 300ms;
+  font-size: 0.8125rem;
+  transform: translate(8px, -16px);
 }
 .membership__saveEmail {
   margin-top: 15px;
 }
-.membership__buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
+.membership__saveEmail .label {
+  font-size: 0.75rem;
 }
 @media screen and (max-width: 767px) {
   .membership__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;
     margin-top: 133px;
   }
 }
 @media screen and (min-width: 768px) {
   .membership__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
     margin-top: 70px;
   }
 }
@@ -1676,7 +1711,7 @@ button {
     margin: 25px 0 20px;
   }
 }
-.newsPress__searchWrapper {
+.newsPress__searchSelect {
   margin-left: auto;
   display: flex;
   flex-direction: row;
@@ -1685,18 +1720,17 @@ button {
   flex-wrap: nowrap;
 }
 @media screen and (min-width: 768px) {
-  .newsPress__searchWrapper {
+  .newsPress__searchSelect {
     width: 440px;
   }
 }
-.newsPress__select {
-  border-bottom: 0;
-}
-.newsPress__keyword {
-  flex: 1 1 0;
-}
 .newsPress .select {
   width: 80px;
+  border: 0;
+}
+.newsPress__searchKeyword {
+  flex: 1 1 0;
+  border-bottom: 1px solid currentColor;
 }
 .newsPress .buttonSearch {
   padding: 4px;
