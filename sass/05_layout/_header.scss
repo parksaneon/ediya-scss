@@ -29,6 +29,7 @@
 
     a{
       padding: 18px;
+      @include focusVisible;
     }
 
     a, img{
@@ -38,6 +39,7 @@
 
   // 메인 메뉴 열기 버튼 ----------------------------------------------------------------- /
   .buttonBurger{
+    @include focusVisible;
     @include mobile{
       padding: 18px;
     }

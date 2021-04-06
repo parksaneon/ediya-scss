@@ -79,6 +79,7 @@
   
   // select 요소
   .select{
+    @include focusVisible;
     width: 80px;
     border: 0;
   }
@@ -87,10 +88,19 @@
   &__searchKeyword{
     flex: 1 1 0;
     border-bottom: 1px solid currentColor;
+
+    &:focus-within{
+      box-shadow: 0 1px 0 0 currentColor;
+    }
+
+    .input{
+      outline: 0;
+    }
   }
 
   // 검색 버튼
   .buttonSearch{
+    @include focusVisible;
     padding: 4px;
   }
 }
@@ -200,10 +210,6 @@
     // 브라우저 호환성 확인 필요 (IE1, Opera, Safari 등 지원하지 않음)
     &::marker {
       display: none;
-    }
-    &::-webkit-details-marker {
-      display: none;
-      color: transparent;
     }
 
     .icon{

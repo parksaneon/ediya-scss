@@ -46,6 +46,7 @@
 
   // GNB 링크 ----------------------------------------------------------------- /
   &__link{
+    @include focusVisible;
     display: block;
     
     @include mobile{
@@ -70,13 +71,14 @@
   // 내비게이션 닫기 버튼 ------------------------------------------------------------ /
   .buttonClose{
     @include mobile{
+      @include focusVisible;
       color: $white;
       position: absolute;
       z-index: 10;
       top: 8px;
       right: 12px;
       padding: 10px;
-      font-size: rem(24px);
+      font-size: rem(18px);
       line-height: 1;
       transition: all 0.4s ease;
       

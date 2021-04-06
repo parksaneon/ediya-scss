@@ -69,8 +69,8 @@
                     <input class="input" type="email" id="userEmail" name="userEmail" aria-required="true" aria-invalid="false" aria-describedby="emailFeedback" />
                     <label class="label" for="userEmail">이메일</label>
                     <span class="iconNone"></span>
-                    <!-- <span class="icon iconChecked"></span> -->
-                    <!-- <span class="icon iconWarning"></span> -->
+                    <span class="icon iconChecked"></span>
+                    <span class="icon iconWarning"></span>
                   </div>
                   <span role="alert" id="emailFeedback" class="errorMessage">이메일 입력 방법이 잘못되었습니다. (예: user@domain.io)</span>
                 </div>
@@ -79,10 +79,10 @@
                     <input class="input" type="password" id="userPassword" name="userPassword" aria-required="true" aria-invalid="false" aria-describedby="passwordFeedback" />
                     <label class="label" for="userPassword">패스워드</label>
                     <!-- visible, invisible 상태에 따라 aria-label이 변경되도록 자바스크립트 설정이 필요함 -->
-                    <button type="button" class="buttonNone buttonPassword" aria-label="패스워드 보기"><span class="icon iconInvisible"></span></button>
+                    <button type="button" class="buttonNone buttonPassword" aria-label="패스워드 보기"><span class="icon iconVisible"></span></button>
                     <span class="iconNone"></span>
-                    <!-- <span class="icon iconChecked"></span> -->
-                    <!-- <span class="icon iconWarning"></span> -->
+                    <span class="icon iconChecked"></span>
+                    <span class="icon iconWarning"></span>
                   </div>
                   <span role="alert" id="passwordFeedback" class="errorMessage">패스워드는 숫자, 영어 조합 6자 이상 입력해야 합니다.</span>
                 </div>
@@ -91,11 +91,11 @@
                   <div class="formControl">
                     <input class="input" type="password" id="userPasswordConfirm" name="userPasswordConfirm" aria-required="true" aria-invalid="false" aria-describedby="passwordFeedbackConfirm" />
                     <label class="label" for="userPasswordConfirm">패스워드 확인</label>
-                    <!-- visible, invisible 상태에 따라 aria-label이 변경되도록 자바스크립트 설정이 필요함 -->
-                    <button type="button" class="buttonNone buttonPassword" aria-label="패스워드 보기"><span class="icon iconInvisible"></span></button>
-                    <span class="icon"></span>
-                    <!-- <span class="icon iconChecked"></span> -->
-                    <!-- <span class="icon iconWarning"></span> -->
+                    <!-- visible, invisible 상태에 따라 aria-label이 변경되도록 자바스크립트 처리가 필요함 -->
+                    <button type="button" class="buttonNone buttonPassword" aria-label="패스워드 보기"><span class="icon iconInVisible"></span></button>
+                    <span class="iconNone"></span>
+                    <span class="icon iconChecked"></span>
+                    <span class="icon iconWarning"></span>
                   </div>
                   <span role="alert" id="passwordFeedbackConfirm" class="errorMessage">패스워드가 일치하지 않습니다.</span>
                 </div>

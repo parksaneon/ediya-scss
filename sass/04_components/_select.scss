@@ -1,6 +1,7 @@
 // Select 요소 스타일 시작 ---------------------------------------------------------- /
 .formControl{
   .select{
+    @include focusVisible;
     user-select: none;
     width: 100px;
     margin-right: 5px;

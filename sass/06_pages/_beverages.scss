@@ -30,6 +30,7 @@
 
   // 이디야 음료 카드 버튼 (<a role="button">) ------------------------------------------ /
   &__button{
+    @include focusVisible;
     // a 요소를 block으로 설정하여 부모 요소 박스의 크기만큼 확장
     display: block;
     background: $grayscaleSnow;
@@ -55,8 +56,8 @@
 
   // 이디야 음료 상세정보 --------------------------------------------------------------- /
   &__detail{
-    display: block!important;
-    opacity: 1;
+    display: none;
+    opacity: 0;
     position: absolute;
     z-index: 500;
     top: 0;
@@ -70,6 +71,7 @@
 
     // 음료 카드 클릭 시 .beverage__detail 영역에 .is--active가 추가되도록 설정
     &.is--active {
+      display: block;
       opacity: 1;
     }
   }
@@ -119,6 +121,7 @@
   
   // 이디야 음료 상세정보 패널 닫기 버튼 ------------------------------------------------------ /
   .buttonClose{
+    @include focusVisible;
     position: absolute;
     top: 16px;
     right: 16px;
