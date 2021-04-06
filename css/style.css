@@ -791,7 +791,14 @@ button {
   animation: spinner 0.25s infinite;
   background-image: url(../images/icon-arrow-loading.svg);
 }
-.iconGoTop::before {
+.iconGoToTop {
+  position: fixed;
+  right: 30px;
+  bottom: 276px;
+  width: 50px;
+  height: 50px;
+}
+.iconGoToTop::before {
   background-image: url(../images/icon-go-to-top.svg);
 }
 
