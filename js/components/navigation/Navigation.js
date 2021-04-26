@@ -26,7 +26,9 @@
     breakpoint: 768,
     list: [],
     templateId: '#template-id',
-    openMen: null,
+    openButton: null,
+    closeButton: null,
+    activeClass: 'is--active'
   };
 
   /* 인스턴스 멤버 ------------------------------------------------------------------ */
@@ -60,7 +62,7 @@
 
   function bindEvents() {
     this.openButton = this.options.openButton;
-    this.closeButton = this.component.querySelector('.button.is-close-menu');
+    this.closeButton = this.options.closeButton;
 
     this.openButton.addEventListener('click', this.open.bind(this));
     this.closeButton.addEventListener('click', this.close.bind(this));
@@ -70,20 +72,22 @@
   function open() {
     var component = this.component;
     var openButton = this.openButton;
+    var activeClass = this.options.activeClass;
 
     component.hidden = false;
     openButton.setAttribute('disabled', 'disabled');
 
     setTimeout(function() {
-      component.classList.add('is-active');
+      component.classList.add(activeClass);
     }, 10);
   }
 
   function close() {
     var component = this.component;
     var openButton = this.openButton;
+    var activeClass = this.options.activeClass;
 
-    component.classList.remove('is-active');
+    component.classList.remove(activeClass);
     setTimeout(function() {
       component.hidden = true;
       openButton.removeAttribute('disabled');

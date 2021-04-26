@@ -2,9 +2,6 @@
   'use strict';
 
   var location = window.location;
-  var isDevelopmentMode = function() {
-    return location.href.indexOf('127.0.0.1') > -1 || location.href.indexOf('localhost') > -1;
-  };
 
   /* 생성자 ---------------------------------------------------------------------- */
 
