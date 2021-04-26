@@ -11,6 +11,18 @@
     <!-- 스타일링 -->
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+
+    <!-- 스크립트: 즉시 실행 -->
+    <script src="./js/utils/dom.js"></script>
+    <script src="./js/utils/mixins.js"></script>
+    <script src="./js/utils/isDevelopmentMode.js"></script>
+    <script src="./js/polyfills/unfetch.js"></script>
+    <script src="./js/components/navigation/Navigation.js"></script>
+    <script src="./js/components/navigation/NavigationItem.js"></script>
+
+    <!-- 스크립트: DOM 콘텐츠 준비 이후 실행 -->
+    <script src="./js/navigationControl.js" defer></script>
+
   </head>
 
   <body>
@@ -23,16 +35,24 @@
           <button type="button" class="buttonNone buttonBurger" aria-label="메인메뉴 열기" title="메인메뉴 열기">
             <span class="icon iconBurger"></span>
           </button>
+
           <nav class="navigation">
             <h2 class="a11yHidden">메인 메뉴</h2>
             <ul class="navigation__list">
-              <li class="navigation__item"><a class="navigation__link" href="./views/signin.html">로그인</a></li>
+              <!-- <li class="navigation__item"><a class="navigation__link" href="./views/signin.html">로그인</a></li>
               <li class="navigation__item"><a class="navigation__link" href="./views/signup.html">회원 가입</a></li>
               <li class="navigation__item"><a class="navigation__link" href="./views/ui-design.html">이디야 디자인</a></li>
               <li class="navigation__item"><a class="navigation__link" href="./views/beverages.html">이디야 음료</a></li>
               <li class="navigation__item"><a class="navigation__link" href="./views/news.html">이디야 뉴스</a></li>
-              <li class="navigation__item"><a class="navigation__link" href="./views/store.html">매장 찾기</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="./views/store.html">매장 찾기</a></li> -->
             </ul>
+            <!-- 비동기 데이터 바인딩 → 내비게이션 리스트 렌더링 (아래 템플릿 코드 활용) -->
+            <script type="text/template" id="template-navigation-list">
+              <li class="navigation__item" data-id="{item.id}">
+                <a class="navigation__link" href="{item.link}">{item.text}</a>
+              </li>
+            </script>
+            
             <button type="button" class="buttonNone buttonClose" title="메인메뉴 닫기" aria-label="메인메뉴 닫기">
               <span class="icon iconClose" aria-hidden="true"></span>
             </button>
