@@ -1,4 +1,3 @@
 function isDevelopmentMode() {
-  var href = location.href;
-  return href.indexOf('127.0.0.1') > -1 || href.indexOf('localhost') > -1;
+  return /(127.0.0.1|localhost)/.test(window.location.href);
 }
