@@ -1,18 +1,18 @@
 {
   "scripts": {
-    "test": "sass scss:stylesheet",
-    "test:watch": "npm run test -- --watch",
-    "sass": "sass sass:css",
-    "watch": "npm run sass -- --watch"
-  },
-  "dependencies": {
-    "@euid/scss-mixins": "^0.2.0",
-    "minireset.css": "^0.0.7",
-    "normalize-scss": "^7.0.1",
-    "sass": "^1.32.8",
-    "spoqa-han-sans": "^3.1.0"
+    "start": "run-p dev watch:**",
+    "htmlhint": "htmlhint '**/*.html'",
+    "watch:htmlhint": "SHELL=/bin/bash chokidar --initial --silent '**/*.html' -c 'npm run htmlhint'",
+    "sass": "sass sass:css -s compressed",
+    "watch:sass": "npm run sass -- --watch",
+    "dev": "live-server"
   },
   "devDependencies": {
-    "htmlhint": "^0.14.2"
+    "chokidar-cli": "^2.1.0",
+    "htmlhint": "^0.14.2",
+    "live-server": "^1.2.1",
+    "normalize-scss": "^7.0.1",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.32.8"
   }
 }
