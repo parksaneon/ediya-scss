@@ -1,67 +1,48 @@
-# 이디야 커피 UI 디자인 & 개발
+# EDIYA (Sass 버전)
 
-**[이듬(E.UID)](https://euid.dev) 블렌디드 러닝, 학습용(디자인 → 개발)** 으로 제작된 [이디야 커피 브랜드 사이트](https://seulbinim.github.io/EDIYA/)입니다.
+**[이듬(E.UID)](https://euid.dev) 블렌디드 러닝, 학습용(디자인 → 개발)** 으로 제작된 Sass 버전의 [이디야 커피 브랜드 사이트](https://seulbinim.github.io/EDIYA-Sass/)입니다.
 
-![](./_ASSETS_/cover.jpg)
+## Sass 및 PostCSS 환경구성
 
-![](./_ASSETS_/rwd-ui-ediya.jpg)
+**EDIYA-Sass 폴더 복제하기**
+```
+git clone https://github.com/seulbinim/EDIYA-Sass.git
+```
 
-<br>
+**.git 디렉토리 삭제**
+```
+cd EDIYA-Sass
+rm -rf .git
+```
 
-## UI 디자인
+**개발의존성 모듈 설치**
+```
+npm install
+```
 
-**Designer** — UI 개발 학습에 필요한 구성 요소 중심으로 모바일/데스크탑 UI를 디자인합니다.
+## npm 명령어
 
-- UI 디자인에 최적화 된 Figma 도구 활용
-- 디자인 시스템 (컴포넌트, 상태 디자인 등)
-- 프로토타입 (개발에 요구되는 사항을 시뮬레이션)
-- 버전 관리 (Version History)
-- 모바일 UI ( 0 — 767px )
-- 데스크탑 UI ( 768px+ )
+```
+npm run 명령어
+```
+> start 명령의 경우 run을 생략할 수 있다.  
 
-> Mobile UI
+| 명령어 | 설명 |
+|-|-|
+| start | dev 명령과 watch:htmlhint 및 watch:sass 명령을 병렬로 수행 |
+| htmlhint | 현재 프로젝트에 포함 된 모든 html 파일에 대해 HTML Validation을 수행 |
+| watch:htmlhint | 파일 내용이 변경되었을 때 HTML Validation을 수행 |
+| sass | sass 파일을 css 파일로 빌드 |
+| watch:sass | 파일 내용이 변경되었을 때 sass 파일을 css 파일로 빌드 |
+| build:postcss | postcss 플러그인을 사용하여 css 파일을 재 빌드 |
+| build | build:sass 명령과 build:postcss 명령을 직렬로 수행 |
 
-![](./_ASSETS_/design-using-figma-1.jpg)
-
-> Desktop UI
-
-![](./_ASSETS_/design-using-figma-2.jpg)
-
-> Design System
-
-![](./_ASSETS_/design-using-figma-3.jpg)
-
-> Version History
-
-![](./_ASSETS_/design-using-figma-4.jpg)
-
-<br>
-
-## UI 개발
-
-**Developer** — 제작된 UI 디자인을 토대로 모바일/데스크탑 UI를 개발합니다.
-
-- 코딩에 적합한 Visual Studio Code 도구 활용
-- 모두를 위한 디지인 (Universal Design, A11Y)
-- 의미있는 구조 설계 (HTML5 + WAI-ARIA)
-- 반응형 웹 스타일링 (CSS3, RWD)
-- 인터랙션 프로그래밍 (OOJS + DOM Script)
-- 소스 버전 관리 (Git)
-- 팀 컬래버레이션 (GitHub)
-
-
-> Semantic Markup (HTML5 + WAI-ARIA)
-
-![](./_ASSETS_/develop-using-vscode-1.jpg)
-
-> Responsive Styling (CSS3 + RWD)
-
-![](./_ASSETS_/develop-using-vscode-2.jpg)
-
-> Interaction Design (Reusable Components)
-
-![](./_ASSETS_/develop-using-vscode-3.jpg)
-
-> Version Control System (Git + GitHub)
-
-![](./_ASSETS_/develop-using-vscode-4.jpg)
+**참고 사이트**  
+- [htmlhint](https://www.npmjs.com/package/htmlhint) 
+- [html watch](https://github.com/htmlhint/HTMLHint/issues/135#issuecomment-267123306)
+- [sass](https://www.npmjs.com/package/sass)
+- [postcss-cli](https://github.com/postcss/postcss-cli)
+- [postcss plugins](https://github.com/postcss/postcss/blob/main/docs/plugins.md)
+- [postcss-autoprefixer](https://github.com/postcss/autoprefixer)
+- [postcss-csso](https://github.com/lahmatiy/postcss-csso)
+- [postcss-combine-media-query](https://github.com/SassNinja/postcss-combine-media-query)
