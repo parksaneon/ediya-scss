@@ -20,12 +20,27 @@ rm -rf .git
 npm install
 ```
 
-## npm 명령어
+**의존성 패키지 모듈**
+| 패키지명 | 설명 |
+|-|-|
+| live-server | 라이브 서버 실행 |
+| htmlhint | HTML 파일에 대한 문법검사를 수행 |
+| chokidar-cli | htmlhint가 watch 옵션을 제공하지 않은 문제를 해결 |
+| sass | Dart Sass 설치 |
+| normalize-scss | normalize.css의 sass 버전 |
+| postcss | postcss를 사용하기 위한 패키지 |
+| autoprefixer | 자동으로 브라우저 접두사를 생성 |
+| postcss-csso | css 파일 최적화(압축) |
+| postcss-combine-media-query | 미디어쿼리 병합 |
+| npm-run-all | 2개 이상의 npm 스크립트 명령을 직렬 또는 병렬로 수행 |
 
+**크로스 브라우징 지원 범위 확인**
+> autoprefixer의 경우 .browserslistrc 파일을 생성한 후 지원 브라우저의 범위를 명시할 수 있습니다.  
 ```
-npm run 명령어
+npx browserslist
 ```
-> start 명령의 경우 run을 생략할 수 있다.  
+
+## npm 스크립트 명령
 
 | 명령어 | 설명 |
 |-|-|
@@ -36,6 +51,11 @@ npm run 명령어
 | watch:sass | 파일 내용이 변경되었을 때 sass 파일을 css 파일로 빌드 |
 | build:postcss | postcss 플러그인을 사용하여 css 파일을 재 빌드 |
 | build | build:sass 명령과 build:postcss 명령을 직렬로 수행 |
+
+```
+npm run 명령어
+```
+> start 명령의 경우 run을 생략할 수 있다.  
 
 **참고 사이트**  
 - [htmlhint](https://www.npmjs.com/package/htmlhint) 
