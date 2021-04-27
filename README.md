@@ -25,11 +25,11 @@ npm install
 |-|-|
 | live-server | 라이브 서버 실행 |
 | htmlhint | HTML 파일에 대한 문법검사를 수행 |
-| chokidar-cli | htmlhint가 watch 옵션을 제공하지 않은 문제를 해결 |
+| chokidar-cli | htmlhint가 watch 옵션을 제공하지 않는 문제를 해결 |
 | sass | Dart Sass 설치 |
 | normalize-scss | normalize.css의 sass 버전 |
 | postcss | postcss를 사용하기 위한 패키지 |
-| autoprefixer | 자동으로 브라우저 접두사를 생성 |
+| autoprefixer | 자동으로 웹브라우저 별 접두사를 생성 |
 | postcss-csso | css 파일 최적화(압축) |
 | postcss-combine-media-query | 미디어쿼리 병합 |
 | npm-run-all | 2개 이상의 npm 스크립트 명령을 직렬 또는 병렬로 수행 |
