@@ -1,0 +1,29 @@
+// 데이터 테이블 시작 ---------------------------------------------------------------- /
+.dataTable{
+  width: 100%;
+  border-top: 2px solid $primaryBlue;
+  border-bottom: 2px solid $primaryBlue;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: $primaryBlue;
+
+  // 데이터 테이블 제목셀, 내용셀 공통 ------------------------------------------------------- /
+  th,
+  td {
+    border-bottom: 1px solid $primaryBlue3;
+  }
+
+  // 데이터 테이블 제목셀 --------------------------------------------------------------- /
+  th {
+    padding: 15px 5px;
+    font-size: rem(14px);
+  }
+
+  // 데이터 테이블 내용셀 스타일 시작 -------------------------------------------------------- /
+  td {
+    padding: 15px;
+    font-size: rem(12px);
+    vertical-align: baseline;
+  }
+}
+// 데이터 테이블 종료 ---------------------------------------------------------------- /

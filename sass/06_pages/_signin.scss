@@ -1,0 +1,20 @@
+// ------ 로그인 시작 ------//
+.signin{
+  // 로그인 페이지의 main 영역만큼 full Background 처리를 위해 설정
+  // _layout.scss 파일에 .main이 flex로 정의되어 있음.
+  // .signin은 .main 요소의 플렉스 아이템임.
+  flex: 1 1 0;
+  
+  color: $grayscaleWhite;
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  @include mobile{
+    background-image: url(../images/coffee-mobile.jpg);
+  }
+  @include desktop{
+    background-image: url(../images/coffee-desktop.jpg);
+  }
+}
+// ------ 로그인 종료 ------//

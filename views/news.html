@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>뉴스 - 이디야 커피(Ediya Coffee)</title>
+    <meta name="description" content="이디야 커피 브랜드 사이트 (학습용) 홈페이지입니다." />
+    <meta name="keywords" content="이디야, 커피, 브랜드, 사이트, 학습용, 홈페이지, 이듬, 블렌디드 러닝" />
+    <meta name="author" content="이듬(E.UID)" />
+    <!-- 스타일링 -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="shortcut icon" href="./../images/favicon.png" type="image/x-icon" />
+  </head>
+
+  <body>
+    <div class="ediya">
+      <header class="header">
+        <div class="header__inner">
+          <h1 class="header__logo">
+            <a href="../index.html"><img src="../images/brand.svg" alt="Ediya Coffee" class="responsiveImg" /></a>
+          </h1>
+          <button type="button" class="buttonNone buttonBurger" aria-label="메뉴 열기" title="메뉴 열기">
+            <span class="icon iconBurger"></span>
+          </button>
+          <nav class="navigation">
+            <h2 class="a11yHidden">메인 메뉴</h2>
+            <ul class="navigation__list">
+              <li class="navigation__item"><a class="navigation__link" href="./signin.html">로그인</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="./signup.html">회원 가입</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="./ui-design.html">이디야 디자인</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="./beverages.html">이디야 음료</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="./news.html">이디야 뉴스</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="./store.html">매장 찾기</a></li>
+            </ul>
+            <button type="button" class="buttonNone buttonClose" title="닫기" aria-label="메인 메뉴 닫기">
+              <span class="icon iconClose" aria-hidden="true"></span>
+            </button>
+          </nav>
+        </div>
+      </header>
+      <main class="main">
+        <section class="news">
+          <h2 class="a11yHidden">이디야 소식</h2>
+          <div class="tabUI news__tabUI">
+            <ul class="tabUI__tabList news__tabList" role="tablist" aria-label="이디야 소식 탭 메뉴">
+              <li role="none" class="tabUI__tabItem">
+                <a class="tabUI__tab news__tab" href="#newsNotice" role="tab" id="newsTab01" aria-controls="newsNotice" aria-selected="false">공지사항</a>
+              </li>
+              <li role="none" class="tabUI__tabItem">
+                <a class="tabUI__tab news__tab" href="#newsPress" role="tab" id="newsTab02" aria-controls="newsPress" aria-selected="false">언론 속 이디야</a>
+              </li>
+              <li role="none" class="tabUI__tabItem">
+                <a class="tabUI__tab news__tab" href="#newsVideo" role="tab" id="newsTab03" aria-controls="newsVideo" aria-selected="false">홍보영상</a>
+              </li>
+              <li role="none" class="tabUI__tabItem">
+                <a class="tabUI__tab news__tab" href="#newsAwards" role="tab" id="newsTab04" aria-controls="newsAward" aria-selected="true">수상내역</a>
+              </li>
+            </ul>
+          </div>
+
+          <section class="news__panel newsNotice" role="tabpanel" aria-labelledby="newsTab01" id="newsNotice">
+            <h3 class="news__title" id="ediyaNewsSection01">공지사항</h3>
+            <p class="news__description">공지사항 내역 입니다.</p>
+          </section>
+          <section class="news__panel newsPress is--selected" role="tabpanel" aria-labelledby="newsTab02" id="newsPress">
+            <h3 class="news__title" id="ediyaNewsSection02">언론 속 이디야</h3>
+            <p class="news__description">이디야의 소식을 전해드립니다.</p>
+            <div class="newsPress__search">
+              <form class="searchForm" id="newsPressSearch" action="#" method="GET">
+                <fieldset>
+                  <legend>언론 속 이디야 검색 폼</legend>
+                  <div class="newsPress__searchSelect">
+                    <select class="select " name="newsPressSelect" id="newsPressSelect" aria-label="뉴스 검색범위 선택">
+                      <option value="Title">제목</option>
+                      <option value="Content">내용</option>
+                    </select>
+                    <div class="newsPress__searchKeyword formControl">
+                      <input type="search" name="newsPressKeyword" class="input" placeholder="검색어 입력(예: 이디야)" aria-required="true" aria-label="뉴스 검색어" id="newsPressKeyword" />
+                      <label class="label a11yHidden" for="newsPressKeyword">뉴스 검색어</label>
+                      <button type="button" class="buttonNone buttonSearch" aria-label="검색">
+                        <span class="icon iconSearch"></span>
+                      </button>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+            <div class="newsPress__dataTable">
+              <table class="dataTable">
+                <caption class="a11yHidden">이디야 소식 안내</caption>
+                <colgroup>
+                  <col class="dataTable__columnOrder" />
+                  <col class="dataTable__columnContent" />
+                  <col class="dataTable__columnDate" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">순서</th>
+                    <th scope="col">내용</th>
+                    <th scope="col">날짜</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>999</td>
+                    <td>
+                      <div class="card">
+                        <figure class="card__thumbnail">
+                          <img class="responsiveImg" src="../images/data-table-thumbnail.jpg" alt="" />
+                        </figure>
+                        <dl class="card__content">
+                          <dt class="card__headline" data-original-text="[MTN] 이디야커피, 조각 케이크 2종 출시…디저트 강화"><a href="#" class="card__link" role="link">[MTN] 이디야커피, 조각 케이크 2종 출시…디저트...</a></dt>
+                          <dd class="card__description" data-original-text="이디야커피가 조각 케이크 신제품 2종과 기존 조각 케이크 3종을 리뉴얼해 출시하며 디저트 케이크 라인업을 강화">이디야커피가 조각 케이크 신제품 2종과 기존 조각 케이크 3종을 리뉴얼해 출시하며 디저트 케이크 라인업을 ...</dd>
+                        </dl>
+                      </div>
+                    </td>
+                    <td><time class="dataTable__date" datetime="2021-01-08T17:30:45">2021.01.08</time></td>
+                  </tr>
+                  <tr>
+                    <td>998</td>
+                    <td>
+                      <div class="card">
+                        <figure class="card__thumbnail">
+                          <img class="responsiveImg" src="../images/data-table-thumbnail.jpg" alt="" />
+                        </figure>
+                        <dl class="card__content">
+                          <dt class="card__headline" data-original-text="[매일경제] 이디야커피, 공정거래조정원 '착한 프랜차이즈' 선정"><a href="#" class="" role="">[매일경제] 이디야커피, 공정거래조정원 '착한 프랜차...</a></dt>
+                          <dd class="card__description" data-original-text="이디야커피는 가맹점을 위해 상생정책을 시행한 노력을 인정받아 25일 공정거래조정원이 인증하는 `착한 프랜차이즈`에 ...">이디야커피는 가맹점을 위해 상생정책을 시행한 노력을 인정받아 25일 공정거래조정원이 인증하는 `착한 프랜차...</dd>
+                        </dl>
+                      </div>
+                    </td>
+                    <td><time class="dataTable__date" datetime="2021-01-27T13:16:22">2021.01.27</time></td>
+                  </tr>
+                  <tr>
+                    <td>997</td>
+                    <td>
+                      <div class="card">
+                        <figure class="card__thumbnail">
+                          <img class="responsiveImg" src="../images/data-table-thumbnail.jpg" alt="" />
+                        </figure>
+                        <dl class="card__content">
+                          <dt class="card__headline" data-original-text="[MTN] 이디야커피, 조각 케이크 2종 출시…디저트 강화"><a href="#" class="" role="">[MTN] 이디야커피, 조각 케이크 2종 출시…디저트...</a></dt>
+                          <dd class="card__description" data-original-text="이디야커피가 조각 케이크 신제품 2종과 기존 조각 케이크 3종을 리뉴얼해 출시하며 디저트 케이크 라인업을 강화">이디야커피가 조각 케이크 신제품 2종과 기존 조각 케이크 3종을 리뉴얼해 출시하며 디저트 케이크 라인업을 ...</dd>
+                        </dl>
+                      </div>
+                    </td>
+                    <td><time class="dataTable__date" datetime="2021-02-16T10:07:11">2021.02.16</time></td>
+                  </tr>
+                  <tr>
+                    <td>996</td>
+                    <td>
+                      <div class="card">
+                        <figure class="card__thumbnail">
+                          <img class="responsiveImg" src="../images/data-table-thumbnail.jpg" alt="" />
+                        </figure>
+                        <dl class="card__content">
+                          <dt class="card__headline" data-original-text="[매일경제] 이디야커피, 공정거래조정원 '착한 프랜차이즈' 선정"><a href="#" class="" role="">[매일경제] 이디야커피, 공정거래조정원 '착한 프랜차...</a></dt>
+                          <dd class="card__description" data-original-text="이디야커피는 가맹점을 위해 상생정책을 시행한 노력을 인정받아 25일 공정거래조정원이 인증하는 `착한 프랜차이즈`에 ...">이디야커피는 가맹점을 위해 상생정책을 시행한 노력을 인정받아 25일 공정거래조정원이 인증하는 `착한 프랜차...</dd>
+                        </dl>
+                      </div>
+                    </td>
+                    <td><time class="dataTable__date" datetime="2021-03-20T09:58:57">2021.03.20</time></td>
+                  </tr>
+                  <tr>
+                    <td>995</td>
+                    <td>
+                      <div class="card">
+                        <figure class="card__thumbnail">
+                          <img class="responsiveImg" src="../images/data-table-thumbnail.jpg" alt="" />
+                        </figure>
+                        <dl class="card__content">
+                          <dt class="card__headline" data-original-text="[매일경제] 이디야커피, 공정거래조정원 '착한 프랜차이즈' 선정"><a href="#" class="" role="">[매일경제] 이디야커피, 공정거래조정원 '착한 프랜차...</a></dt>
+                          <dd class="card__description" data-original-text="이디야커피는 가맹점을 위해 상생정책을 시행한 노력을 인정받아 25일 공정거래조정원이 인증하는 `착한 프랜차이즈`에 ...">이디야커피는 가맹점을 위해 상생정책을 시행한 노력을 인정받아 25일 공정거래조정원이 인증하는 `착한 프랜차...</dd>
+                        </dl>
+                      </div>
+                    </td>
+                    <td><time class="dataTable__date" datetime="2021-04-19T16:13:25">2021.04.19</time></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="pagination">
+              <button type="button" class="buttonNone svgButtonPagePrev" aria-label="이전" disabled="">
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M21.8865 10.981C21.9625 11.479 22.0005 11.99 22.0005 12.5C22.0005 18.014 17.5145 22.5 12.0005 22.5C6.48649 22.5 2.00049 18.014 2.00049 12.5C2.00049 6.986 6.48649 2.5 12.0005 2.5C15.1285 2.5 18.0175 3.923 19.9275 6.402C20.1725 6.72 20.1125 7.178 19.7955 7.422C19.4775 7.668 19.0215 7.607 18.7745 7.29C17.1435 5.169 14.6735 3.954 12.0005 3.954C7.28849 3.954 3.45449 7.787 3.45449 12.5C3.45449 17.212 7.28849 21.045 12.0005 21.045C16.7125 21.045 20.5465 17.212 20.5465 12.5C20.5465 12.063 20.5135 11.626 20.4485 11.201C20.3885 10.805 20.6605 10.434 21.0575 10.373C21.4565 10.307 21.8255 10.584 21.8865 10.981ZM9.20629 12.4992C9.20629 12.3002 9.28529 12.1092 9.42729 11.9682L12.9133 8.4972C13.2073 8.2042 13.6823 8.2052 13.9743 8.4992C14.2663 8.7932 14.2663 9.2672 13.9723 9.5592L11.0193 12.4992L13.9723 15.4392C14.2663 15.7312 14.2663 16.2062 13.9743 16.5002C13.6823 16.7932 13.2073 16.7942 12.9133 16.5022L9.42729 13.0302C9.28529 12.8902 9.20629 12.6992 9.20629 12.4992Z" fill="#0F0F0F"></path>
+                </svg>
+              </button>
+
+              <ul class="pagination__list">
+                <li class="pagination__item"><a href="#page-1" class="on _pagerNo" data-page-no="1" aria-current="page">1</a></li>
+                <li class="pagination__item"><a href="#page-2" class=" _pagerNo" data-page-no="2">2</a></li>
+                <li class="pagination__item"><a href="#page-3" class=" _pagerNo" data-page-no="3">3</a></li>
+                <li class="pagination__item"><a href="#page-4" class=" _pagerNo" data-page-no="4">4</a></li>
+                <li class="pagination__item"><a href="#page-5" class=" _pagerNo" data-page-no="5">5</a></li>
+                <li class="pagination__item"><a href="#page-6" class=" _pagerNo" data-page-no="6">6</a></li>
+                <li class="pagination__item"><a href="#page-7" class=" _pagerNo" data-page-no="7">7</a></li>
+                <li class="pagination__item"><a href="#page-8" class=" _pagerNo" data-page-no="8">8</a></li>
+                <li class="pagination__item"><a href="#page-9" class=" _pagerNo" data-page-no="9">9</a></li>
+                <li class="pagination__item"><a href="#page-10" class=" _pagerNo" data-page-no="10">10</a></li>
+              </ul>
+
+              <button type="button" class="buttonNone svgButtonPageNext" aria-label="다음">
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M10.4805 22.386C10.9785 22.462 11.4895 22.5 11.9995 22.5C17.5135 22.5 21.9995 18.014 21.9995 12.5C21.9995 6.986 17.5135 2.5 11.9995 2.5C6.48551 2.5 1.99951 6.986 1.99951 12.5C1.99951 15.628 3.42251 18.517 5.90151 20.427C6.21951 20.672 6.67751 20.612 6.92151 20.295C7.16751 19.977 7.10651 19.521 6.78951 19.274C4.66851 17.643 3.45351 15.173 3.45351 12.5C3.45351 7.788 7.28651 3.954 11.9995 3.954C16.7115 3.954 20.5445 7.788 20.5445 12.5C20.5445 17.212 16.7115 21.046 11.9995 21.046C11.5625 21.046 11.1255 21.013 10.7005 20.948C10.3045 20.888 9.93351 21.16 9.87251 21.557C9.80651 21.956 10.0835 22.325 10.4805 22.386ZM14.7937 12.4992C14.7937 12.3002 14.7147 12.1092 14.5727 11.9682L11.0867 8.49719C10.7927 8.20419 10.3177 8.20519 10.0257 8.49919C9.73369 8.79319 9.73369 9.26719 10.0277 9.55919L12.9807 12.4992L10.0277 15.4392C9.73369 15.7312 9.73369 16.2062 10.0257 16.5002C10.3177 16.7932 10.7927 16.7942 11.0867 16.5022L14.5727 13.0302C14.7147 12.8902 14.7937 12.6992 14.7937 12.4992Z" fill="#0F0F0F"></path>
+                </svg>
+              </button>
+            </div>
+          </section>
+          <section class="news__panel newsVideo" role="tabpanel" aria-labelledby="newsTab03" id="newsVideo">
+            <h3 class="news__title" id="ediyaNewsSection03">홍보영상</h3>
+            <p class="news__description">홍보영상 내역 입니다.</p>
+          </section>
+          <section class="news__panel newsAward" role="tabpanel" aria-labelledby="newsTab03" id="newsAward">
+            <h3 class="news__title" id="ediyaNewsSection04">수상내역</h3>
+            <p class="news__description">이디야의 영광스런 수상내역입니다.</p>
+            <div class="newsAward__inner">
+              <section class="newsAward__section">
+                <h3 class="newsAward__year">2019<span class="a11yHidden">년 수상내역</span></h3>
+                <ul class="newsAward__list">
+                  <li class="newsAward__item">
+                    <details open class="newsAward__details">
+                      <summary class="newsAward__headline"><b>11</b><span class="a11yHidden">월</span>고용 노동부 주관, 일·생활 균형 우수 기업 선정<span class="icon iconArrowDown"></span></summary>
+                      <figure class="newsAward__thumbnail">
+                        <img class="responsiveImg" src="../images/thumbnail-award.jpg" alt="" />
+                      </figure>
+                      <p class="newsAward__brief">서울경제에서 주최하는 대한민국 창업대상 CEO 부문에 국무총리상을 수상하였습니다.</p>
+                      <p class="newsAward__brief">
+                        <span class="roundBar">수상일</span>
+                        <time class="newsAward__date" datetime="2019-11-29">2019.11.29</time>
+                      </p>
+                    </details>
+                  </li>
+                  <li class="newsAward__item">
+                    <details class="newsAward__details">
+                      <summary class="newsAward__headline"><b>10</b><span class="a11yHidden">월</span>커피 산업 공로상 농림축산식품부 장관상 수상<span class="icon iconArrowDown"></span></summary>
+                      <figure class="newsAward__thumbnail">
+                        <img class="responsiveImg" src="../images/thumbnail-award.jpg" alt="" />
+                      </figure>
+                      <p class="newsAward__brief">서울경제에서 주최하는 대한민국 창업대상 CEO 부문에 국무총리상을 수상하였습니다.</p>
+                      <p class="newsAward__brief">
+                        <span class="roundBar">수상일</span>
+                        <time class="newsAward__date" datetime="2019-10-04">2019.10.04</time>
+                      </p>
+                    </details>
+                  </li>
+                  <li class="newsAward__item">
+                    <details class="newsAward__details">
+                      <summary class="newsAward__headline"><b>06</b><span class="a11yHidden">월</span>이디야커피 대한민국 창업대상 국무총리상 수상<span class="icon iconArrowDown"></span></summary>
+                      <figure class="newsAward__thumbnail">
+                        <img class="responsiveImg" src="../images/thumbnail-award.jpg" alt="" />
+                      </figure>
+                      <p class="newsAward__brief">서울경제에서 주최하는 대한민국 창업대상 CEO 부문에 국무총리상을 수상하였습니다.</p>
+                      <p class="newsAward__brief">
+                        <span class="roundBar">수상일</span>
+                        <time class="newsAward__date" datetime="2019-06-18">2019.06.18</time>
+                      </p>
+                    </details>
+                  </li>
+                </ul>
+              </section>
+              <section class="newsAward__section">
+                <h3 class="newsAward__year">2018<span class="a11yHidden">년 수상내역</span></h3>
+                <ul class="newsAward__list">
+                  <li class="newsAward__item">
+                    <details class="newsAward__details">
+                      <summary class="newsAward__headline"><b>12</b><span class="a11yHidden">월</span>소비자중심경영(CCM) 인증 획득<span class="icon iconArrowDown"></span></summary>
+                      <figure class="newsAward__thumbnail">
+                        <img class="responsiveImg" src="../images/thumbnail-award.jpg" alt="" />
+                      </figure>
+                      <p class="newsAward__brief">서울경제에서 주최하는 대한민국 창업대상 CEO 부문에 국무총리상을 수상하였습니다.</p>
+                      <p class="newsAward__brief">
+                        <span class="roundBar">수상일</span>
+                        <time class="newsAward__date" datetime="2018-12-21">2018.12.21</time>
+                      </p>
+                    </details>
+                  </li>
+                  <li class="newsAward__item">
+                    <details class="newsAward__details">
+                      <summary class="newsAward__headline"><b>07</b><span class="a11yHidden">월</span>소비자 만족도 최우수 기업<span class="icon iconArrowDown"></span></summary>
+                      <figure class="newsAward__thumbnail">
+                        <img class="responsiveImg" src="../images/thumbnail-award.jpg" alt="" />
+                      </figure>
+                      <p class="newsAward__brief">소비자 만족도 최우수 상을 수상하였습니다.</p>
+                      <p class="newsAward__brief">
+                        <span class="roundBar">수상일</span>
+                        <time class="newsAward__date" datetime="2018-07-14">2018.07.14</time>
+                      </p>
+                    </details>
+                  </li>
+                </ul>
+              </section>
+              <section class="newsAward__section">
+                <h3 class="newsAward__year">2017<span class="a11yHidden">년 수상내역</span></h3>
+                <ul class="newsAward__list">
+                  <li class="newsAward__item">
+                    <details class="newsAward__details">
+                      <summary class="newsAward__headline"><b>06</b><span class="a11yHidden">월</span>대한민국 창업대상 산업통상자원부 장관상 수상<span class="icon iconArrowDown"></span></summary>
+                      <figure class="newsAward__thumbnail">
+                        <img class="responsiveImg" src="../images/thumbnail-award.jpg" alt="" />
+                      </figure>
+                      <p class="newsAward__brief">서울경제에서 주최하는 대한민국 창업대상 CEO 부문에 국무총리상을 수상하였습니다.</p>
+                      <p class="newsAward__brief">
+                        <span class="roundBar">수상일</span>
+                        <time class="newsAward__date" datetime="2017-06-27">2017.06.27</time>
+                      </p>
+                    </details>
+                  </li>
+                  <li class="newsAward__item">
+                    <details class="newsAward__details">
+                      <summary class="newsAward__headline"><b>02</b><span class="a11yHidden">월</span>사회보험 사각지대해소 '특별상' 수상<span class="icon iconArrowDown"></span></summary>
+                      <figure class="newsAward__thumbnail">
+                        <img class="responsiveImg" src="../images/thumbnail-award.jpg" alt="" />
+                      </figure>
+                      <p class="newsAward__brief">서울경제에서 주최하는 대한민국 창업대상 CEO 부문에 국무총리상을 수상하였습니다.</p>
+                      <p class="newsAward__brief">
+                        <span class="roundBar">수상일</span>
+                        <time class="newsAward__date" datetime="2017-02-14">2017.02.14</time>
+                      </p>
+                    </details>
+                  </li>
+                </ul>
+              </section>
+            </div>
+          </section>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="footer__inner">
+          <div class="footer__logo">
+            <img src="./../images/brand-dark.svg" alt="EDIYA COFFEE" />
+          </div>
+          <div class="privacy">
+            <ul class="privacy__list">
+              <li class="privacy__item"><a class="privacy__link" href="#">개인정보처리방침</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">멤버스 이용약관</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">가맹 안내</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">대량쿠폰구매</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">채용안내</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">고객의 소리</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">사이트맵</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">점주의 방</a></li>
+            </ul>
+          </div>
+          <address class="address">
+            <span class="address__content">서울특별시 강남구 논현로 636 이디야빌딩(서울특별시 강남구 논현동 221-17)</span>
+            <span class="address__content"><b>TEL : </b>02-543-6467</span>
+            <span class="address__content"><b>FAX : </b>02-543-7191</span>
+            <span class="address__content"><b>사업자등록번호 : </b>107-86-16302</span>
+            <span class="address__content"><b>통신판매업 신고 : </b>강남 제 002519호</span>
+            <span class="address__content"><b>대표이사 : </b>문창기</span>
+          </address>
+          <small class="copyright">&copy; 2017 EDIYA COFFEE COMPANY. ALL RIGHTS RESERVED..</small>
+        </div>
+      </footer>
+    </div>
+  </body>
+
+</html>
