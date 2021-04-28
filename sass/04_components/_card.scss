@@ -1,0 +1,55 @@
+// 썸네일 카드 스타일 ---------------------------------------------------------------- /
+.card{
+  background: $grayscaleWhite;
+  @include clearFix;
+
+  // 썸네일(figure 요소) ------------------------------------------------------------ /
+  &__thumbnail{
+    @include mobile{
+      display: none;
+    }
+    @include desktop{
+      float: left;
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+      border: 1px solid rgba($black, 0.1);
+    }
+  }
+
+  // 썸네일 콘텐츠 목록 (dl 요소) 스타일 -------------------------------------------------------- /
+  &__content{
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  // 썸네일 콘텐츠 헤드라인 (dt 요소) 스타일 시작 ----------------------------------------------------- /
+  &__headline {
+    color: $primaryBlue;
+    font-weight: 700;
+
+    @include mobile{
+      font-size: rem(14px);
+    }
+    @include desktop{
+      font-size: rem(15px);
+    }
+  }
+
+  // 썸네일 콘텐츠 헤드라인 링크 (a 요소)
+  &__link{
+    @include focusVisible;
+  }
+
+  // 썸네일 콘텐츠 설명 (dd 요소) 스타일 -------------------------------------------------------- /
+  &__description {
+    margin-top: 5px;
+    margin-left: 0;
+    color: $grayscaleGray2;
+
+    @include desktop{
+      font-size: rem(13px);
+    }
+  }
+}
+// 썸네일 카드 스타일 종료 ------------------------------------------------------------- /

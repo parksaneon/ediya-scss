@@ -1,0 +1,316 @@
+// 이디야 홈(메인 페이지) 시작 ------------------------------------------------------------- /
+
+// 이디야 배너 -------------------------------------------------------------------- /
+.banner{
+  text-align: center;
+
+  @include mobile{
+    padding: 42px 0 165px;
+    background: $white linear-gradient($secondaryLightBlue 0%, $secondaryLightBlue 57.364341%, $white 57.364341%, $white 100%);
+  }
+  @include desktop{
+    padding: 50px 0 260px;
+    background: $white linear-gradient($secondaryLightBlue 0%, $secondaryLightBlue 50%, $white 50%, $white 100%);
+  }
+
+  &__inner{
+    @include desktop{
+      @include boxFixed(768px, 14px);
+    }
+  }
+
+  // 이디야 배너 영문 슬로건 및 구분선 ------------------------------------------------------- /
+  &__enSlogan{
+    font-size: rem(25px);
+    font-weight: 100;
+
+    &::after{
+      content: '';
+      display: block;
+      width: 40px;
+      border-top: 1px solid $black;
+      @include autoMargin;
+
+      @include mobile{
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+      @include desktop{
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__slogan{
+    font-size: rem(14px);
+  }
+
+  // 이디야 배너 영문 슬로건 강조 영역 (<em class="brandName">EDIYA COFFEE</em>) ----------------------------------------------------------------------- /
+  .brandName{
+    font-size: rem(31px);
+    font-weight: 700;
+    color: $primaryBlue;
+
+    @include mobile{
+      display: block;
+    }
+    @include desktop{
+      &::before{
+        content: ' ';
+      }
+    }
+  }
+
+  // 이디야 배너 음료 목록 -------------------------------------------------------------- /
+  &__list{
+    position: relative;
+  }
+  // 이디야 배너 음료 아이템 -------------------------------------------------------------- /
+  &__item{
+    position: absolute;
+
+    &:first-child{
+      @include mobile{
+        display: none;
+      }
+      @include desktop{
+        transform: translate(-54px, -115px);
+      }
+      // 데스크탑 음료 배치 시 740 영역을 벗어나는 이슈를 해결하기 위해 임의로 지정한 Breakpoint
+      @include tabletOnly{
+        transform: translate(0, -85px);
+      }
+    }
+
+    &:last-child{
+      @include mobile{
+        width: 225px;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      @include desktop{
+        right: 0;
+        transform: translate(100px, 0);
+      }
+      // 데스크탑 음료 배치 시 740 영역을 벗어나는 이슈를 해결하기 위해 임의로 지정한 Breakpoint
+      @include tabletOnly{
+        transform: translate(20px, 50px);
+      }
+    }
+  }
+  
+  // 이디야 배녀 음료 캡션 -------------------------------------------------------------- /
+  &__caption{
+    position: absolute;
+    text-align: right;
+
+    @include mobile{
+      display: none;
+    }
+
+    &--bold{
+      font-size: rem(16px);
+      font-weight: 700;
+      color: $primaryBlue7;
+    }
+    
+    &--normal{
+      font-size: rem(16px);
+      color: $secondaryLightBlue5;
+    }
+
+    @at-root .banner__enCaption{
+      font-size: rem(12px);
+      color: $secondaryLightBlue6;
+    }
+
+    &CheeseCookie{
+      transform: translate(70px, 0);
+    }
+
+    &ChocoDouble{
+      transform: translate(-78px, -143px);
+    }
+
+    &Rice{
+      // transform: translate(0, -54px);
+      // 디자인 시안과 다른 위치로 수정
+      transform: translate(250px, -184px);
+    }
+
+    span{
+      display: block;
+    }
+  }
+
+  // 이디야 배녀 음료 이미지 애니메이션 ------------------------------------------------------- /
+  &__img {
+    animation: bounce 600ms ease-in-out infinite alternate;
+  }
+
+  // 이디야 추천 쉐이크 음료 이미지 (두 이미지 간의 delay를 지정)
+  &__item:last-child img {
+    animation-delay: 400ms;
+  }
+
+  // 이디야 배너 메뉴 보기 버튼 ----------------------------------------------------------- /
+  .buttonGoMenu{
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    z-index: 100;
+    color: $primaryBlue;
+    border: 1px solid currentColor;
+
+    @include mobile{
+      padding: 8px 18px;
+      margin-top: 15px;
+      margin-bottom: 20px;
+    }
+    @include desktop{
+      padding: 8px 24px;
+      margin-top: 30px;
+      margin-bottom: 35px;
+    }
+  }
+}
+
+// 프로모션 (유튜브, 홈 공지사항, 홈 뉴스) ------------------------------------------------------ /
+.promotion{
+  @include desktop{
+    background: $grayscaleSnow;
+  }
+
+  // 프로모션 inner (740px)
+  &__inner{
+    @include desktop{
+      @include boxFixed(768px, 14px);
+      @include flexbox(row, center);
+      padding-top: 62px;
+      padding-bottom: 63px;
+    }
+  }
+  
+  // 홍보영상 (유튜브) ---------------------------------------------------------------- /
+  &Youtube{
+    @include desktop{
+      width: 365px;
+      // 디자인 시안에서 발생한 오차로 인한 최소 높이 및 배경 설정 
+      min-height: 205px;
+      background: $gradientBlue;
+    }
+  }
+  
+  // 홈 공지사항 및 뉴스 그룹 -------------------------------------------------------------- /
+  &__wrapper{
+    @include desktop{
+      width: 375px;
+    }
+  }
+
+  &__title{
+    font-size: rem(15px);
+    font-weight: 700;
+    color: $grayscaleWhite;
+  }
+
+  &__subTitle{
+    font-weight: 700;
+    color: $primaryBlue;
+  }
+
+  // 이디야 홈 공지사항 ------------------------------------------------------------- /
+  &Notice{
+    position: relative;
+    @include flexbox;
+  
+    &__title{
+      min-width: 125px;
+      padding: 15px 0 0 15px;
+      background: $gradientBlue;
+      font-size: rem(15px);
+      font-weight: 700;
+      color: $grayscaleWhite;
+    }
+    
+    &__section{
+      flex-grow: 1;
+      padding: 15px 20px 15px 15px;
+      background: $grayscaleWhite;
+    }
+    
+    &__subTitle{
+      font-weight: 700;
+      color: $primaryBlue;
+      margin: 0;
+    }
+
+    &__date{
+      font-size: rem(11px);
+      color: $grayscaleGray2;
+    }
+  
+    &__brief{
+      font-size: rem(13px);
+      line-height: 1.5;
+      color: $grayscaleBlack2;
+      letter-spacing: -0.05em;
+      margin: 10px 0 0 0;
+    }
+  
+    .buttonWrapper{
+      position: absolute;
+      bottom: 10px;
+      left: 84px;
+      @include flexbox;
+    }
+  }
+  
+  // 홈 뉴스 시작 ------------------------------------------------------------------- /
+  &News{
+    position: relative;
+    background-color: $primaryBlue;
+    color: $grayscaleWhite;
+    font-size: rem(13px);
+    padding: 15px;
+  
+    &__title{
+      font-weight: bold;
+      margin: 0 0 15px 0;
+      font-size: rem(15px);
+      font-weight: 700;
+      color: $grayscaleWhite;
+    }
+  
+    &__item{
+      @include flexbox(row, flex-start, center, nowrap);
+      margin-top: 5px;
+  
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  
+    &__headline{
+      flex-grow: 1;
+      margin-right: 25px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  
+    &__date{
+      font-size: rem(12px);
+      min-width: 62px;
+    }
+  
+    .svgLinkIconMore{
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+  }
+}
+// 이디야 홈(메인 페이지) 종료 ------------------------------------------------------------------ /

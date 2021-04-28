@@ -1,0 +1,138 @@
+// 로그인, 회원가입 (.membership) 공통 ------------------------------------------------ /
+.membership{
+  color: $grayscaleWhite;
+
+  @include desktop{
+    margin: 0 auto;
+    width: 540px;
+  }
+
+  // 제목 및 단락 스타일 --------------------------------------------------------------- /
+  &__title,
+  &__enDescription,
+  &__description{
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+  // 제목 스타일 ----------------------------------------------------------------- /
+  &__title{
+    font-weight: 100;
+    font-size: rem(36px);
+    margin: 50px 0 24px;
+  }
+
+  // 영문 단락 스타일 ----------------------------------------------------------------- /
+  &__enDescription{
+    font-size: rem(18px);
+  }
+
+  // 단락 스타일 -------------------------------------------------------------------- /
+  &__description{
+    font-size: rem(12px);
+  }
+
+  // 이메일, 패스워드 입력 서식 ------------------------------------------------------------ /
+  &__email,
+  &__password,
+  &__passwordConfirm{
+    @include mobile{
+      margin-top: 52px;
+    }
+    @include desktop{
+      margin-top: 42px;
+    }
+    .formControl{
+      border-bottom: 2px solid $grayscaleWhite;
+    }
+    .formControl:focus-within {
+      box-shadow: 0 1px 0 0 currentColor, 0 2px 0 0 currentColor;
+    }
+  }
+  // 교차 축 기준으로 가운데 배치 된 .icon의 위치를 미세하게 조정
+  .label ~ .icon,
+  .buttonPassword,
+  .buttonPassword ~ .icon{
+    position: relative;
+    top: 6px;
+  }
+
+  // 이메일 및 비밀번호 입력서식
+  .input{
+    color: $grayscaleWhite;
+    height: 48px;
+    padding: 22px 8px 8px;
+    &:focus{
+      outline: none;
+    }
+  }
+
+  .button, .buttonNone{
+    @include focus;
+  }
+
+  // 비밀번호 보기/감추기 버튼 오른쪽에 여백을 지정
+  .buttonPassword{
+    margin-right: 8px;
+  }
+
+  // 에러 메시지 -------------------------------------------------------------------- /
+  .errorMessage{
+    display: none;
+    font-size: rem(12px);
+    padding: 8px 0 3px 8px;
+  }
+
+  &__email,
+  &__password,
+  &__passwordConfirm{
+
+    // 입력 값이 오류일 에러메시지가 보이도록 설정
+    &.is--invalid{
+      .errorMessage{
+        display: block;
+      }
+    }
+
+    // 입력 서식이 초점(:focus)을 받거나 상위 요소에 .is--valid 또는 .is--invalid 클래스가 적용된 경우 .label 요소의 글자 크기 및 위치 조정
+    .input:focus + .label,
+    &.is--valid .label,
+    &.is--invalid .label{
+      position: absolute;
+      transition: all 300ms;
+      font-size: rem(13px);
+      transform: translate(8px, -16px);
+    }
+  }
+
+  // 체크박스 스타일 ------------------------------------------------------------------ /
+  &__saveEmail{
+    margin-top: 15px;
+    .label{
+      font-size: rem(12px);
+    }
+  }
+
+  // 버튼 크기 및 여백 ---------------------------------------------------------------- /
+  //  가입하기, 로그인, 회원가입 버튼 공통
+  &__buttons{
+    @include mobile{
+      @include flexbox(column, center, flex-start, nowrap);
+      margin-top: 133px;
+    }
+    @include desktop{
+      @include flexbox(row, space-between, center, nowrap);
+      margin-top: 70px;
+    }
+    
+    .button{
+      @include mobile{
+        width: 100%;
+        margin-bottom: 15px;
+      }
+      @include desktop{
+        width: 260px;
+      }
+    }
+  }
+}

@@ -1,0 +1,261 @@
+// 이디야 뉴스 (news) 공통 시작 ------------------------------------------------------------- /
+.news{
+  @include desktop{
+    padding-top: 70px;
+  }
+  
+  // 이디야 뉴스 탭 UI ------------------------------------------------------------- /
+  .tabUI__tabItem{
+    @include mobile{
+      width: 50%;
+    }
+  }
+
+  // 이디야 뉴스 섹션 공통 패널 -------------------------------------------------------------- /
+  &__panel{
+    // 섹션 패널은 보이지 않도록 기본 설정
+    display: none;
+
+    @include mobile{
+      padding: 20px 15px;
+    }
+
+    // 데스크탑 환경에서 섹션 패널의 최소 높이 설정
+    @include desktop{
+      @include boxFixed(710px);
+      padding: 30px 15px;
+      min-height: 740px;
+    }
+
+    // 선택 된 tab과 연결된 tabPanel에 is--selected 클래스가 적용된 경우 보이도록 설정
+    &.is--selected {
+      display: block;
+    }
+  }
+
+  // 이디야 뉴스 섹션 공통 제목 ----------------------------------------------------------- /
+  &__title{
+    margin-top: 20px;
+    font-size: rem(20px);
+    font-weight: 700;
+    color: $primaryBlue;
+
+    &:before{
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 16px;
+      margin-right: 4px;
+      background: url(../images/icon-news-headline.svg) no-repeat 0 0 / 100% 100%;
+    }
+  }
+
+  // 이디야 뉴스 섹션 공통 설명 -------------------------------------------------------------- /
+  &__description{
+    font-size: rem(14px);
+    margin: 10px 0;
+  }
+}
+// 이디야 뉴스 (news) 공통 종료 ------------------------------------------------------------- /
+
+// 언론 속 이디야 (NewsPress) ------------------------------------------------------ /
+.newsPress{
+  &__search{
+    @include mobile{
+      margin: 25px 0 15px;
+    }
+    @include desktop{
+      margin: 25px 0 20px;
+    }
+  }
+  // 플렉스 배치를 위한 그룹 ( selet + input + label + button 그룹 -------------------------------------------------------- /
+  &__searchSelect{
+    margin-left: auto;
+    @include flexbox;
+    @include desktop{
+      width: 440px;
+    }
+  }
+  
+  // select 요소
+  .select{
+    @include focusVisible;
+    width: 80px;
+    border: 0;
+  }
+
+  // input + label + button 그룹
+  &__searchKeyword{
+    flex: 1 1 0;
+    border-bottom: 1px solid currentColor;
+
+    &:focus-within{
+      box-shadow: 0 1px 0 0 currentColor;
+    }
+
+    .input{
+      outline: 0;
+    }
+  }
+
+  // 검색 버튼
+  .buttonSearch{
+    @include focusVisible;
+    padding: 4px;
+  }
+}
+
+// 수상 내역 (newsAward) 시작 ------------------------------------------------- /
+.newsAward{
+  // .news__panel에 설정 된 최소 높이 및 여백 제거
+  min-height: initial;
+  padding-left: 0;
+  padding-right: 0;
+
+  &__inner{
+    background: $grayscaleSnow;
+
+    @include mobile{
+      padding: 25px 15px 45px;
+    }
+
+    @include desktop{
+      @include boxFull;
+      padding: 45px 0 80px;
+      margin-top: 25px;
+    }
+  }
+
+  // .newsAward 영역의 좌/우 여백 제거로 인해 .newsAward 내 제목과 설명 영역에 여백 추가 지정
+  .news__title,
+  .news__description{
+    @include mobile{
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  // 수상 내역 섹션 ------------------------------------------------------------------ /  
+  &__section{
+    @include flexbox;
+    
+    @include desktop{
+      // .newsAward__inner 영역 안에서 섹션을 가운데 배치하기 위한 코드
+       @include boxFixed(710px);
+       @include autoMargin;
+    }
+    
+    &:last-child {
+      .newsAward__list{
+        padding-bottom: 0;
+      }
+    }
+  }
+  // 언론 속 이디야 연도 --------------------------------------------------------------- /
+  &__year{
+    font-weight: 700;
+    color: $primaryBlue;
+    margin: -10px 25px 0 0;
+  }
+ 
+  // 언론 속 이디야 수상내역 ------------------------------------------------------------- /
+  &__list{
+    position: relative;
+    flex-grow: 1;
+    padding-bottom: 40px;
+    border-left: 1px solid $primaryBlue4;
+
+    &::before{
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      transform: translateX(-50%);
+      background-color: $primaryBlue;
+      border-radius: 4px;
+    }
+  }
+ 
+  // 언론 속 이디야 수상내역 아이템 --------------------------------------------------------- /
+  &__item{
+    margin-bottom: 20px;
+  }
+
+  // 언론 속 이디야 수상내역 details 영역 -------------------------------------------------- /
+  &__details{
+    margin-top: -15px;
+  }
+
+  &__details[open]{
+    .icon::before{
+      background-image: url(../images/icon-arrow-up.svg);
+    }
+  }
+
+
+  // 언론 속 이디야 수상내역 summary 영역 -------------------------------------------------- /
+  &__headline{
+    @include flexbox(row, flex-start, flex-start, nowrap);
+    position: relative;
+    font-size: rem(13px);
+    font-weight: 700;
+    color: $grayscaleBlack;
+    width: 100%;
+    padding: 5px ;
+    // summary 요소의 기본 marker를 없애기 위해 선언
+    list-style: none;
+    
+    // 브라우저 호환성 확인 필요 (IE1, Opera, Safari 등 지원하지 않음)
+    &::marker {
+      display: none;
+    }
+
+    .icon{
+      margin-top: -5px;
+      margin-left: auto;
+      min-width: 24px;
+      height: 24px;
+    }
+
+    b {
+      font-size: rem(12px);
+      font-weight: 400;
+      margin: 0 10px 0 5px;
+    }
+  }
+
+  // 언론 속 이디야 수상내역 썸네일 --------------------------------------------------------- /
+  &__thumbnail{
+    margin-left: 35px;
+    font-size: rem(12px);
+  }
+
+  // 언론 속 이디야 수상내역 요약 정보 ------------------------------------------------------- /
+  &__brief{
+    margin: 10px 0 0 35px;
+    font-size: rem(12px);
+  }
+
+  // 언론 속 이디야 수상일 라운드 박스 ------------------------------------------------------- /
+  // 시안 수치와 조금 다르게 설정 함.
+  // 별도의 스타일 또는 컴포넌트로 분리할 수도 있음.
+  .roundBar{
+    display: inline-block;
+    background-color: $primaryBlue;
+    border-radius: 20px;
+    color: $primaryBlue4;
+    font-size: 0.8rem;
+    padding: 4px 8px 2px;
+    margin-right: 5px;
+  }
+
+  // 언론 속 이디야 수상일 -------------------------------------------------------------- /
+  &__date{
+    color: $primaryBlue2;
+    font-weight: 700;
+    font-size: rem(11px);
+  }
+}
+// 이디야 소식 (News) 종료 ------------------------------------------------------------- /

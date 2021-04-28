@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>음료- 이디야 커피(Ediya Coffee)</title>
+    <meta name="description" content="이디야 커피 브랜드 사이트 (학습용) 홈페이지입니다." />
+    <meta name="keywords" content="이디야, 커피, 브랜드, 사이트, 학습용, 홈페이지, 이듬, 블렌디드 러닝" />
+    <meta name="author" content="이듬(E.UID)" />
+    <!-- 스타일링 -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="shortcut icon" href="./../images/favicon.png" type="image/x-icon" />
+  </head>
+
+  <body>
+    <div class="videoBgContainer" role="presentation">
+      <!-- 
+          Object Fit, Position 폴리필 라이브러리 사용법
+          https://github.com/constancecchen/object-fit-polyfill#usage
+          
+          data-object-fit, data-object-position 속성 설정
+      -->
+      <video class="video responsiveVideo"
+             src="../media/coffee-latte-art.mp4"
+             poster="../media/coffee-latte-art-cover.png"
+             preload="auto" autoplay muted loop
+             data-object-fit="cover"
+             data-object-position="center">
+      </video>
+    </div>
+    <div class="ediya">
+      <header class="header">
+        <div class="header__inner">
+          <h1 class="header__logo">
+            <a href="../index.html"><img src="../images/brand.svg" alt="Ediya Coffee" class="responsiveImg" /></a>
+          </h1>
+          <button type="button" class="buttonNone buttonBurger" aria-label="메뉴 열기" title="메뉴 열기">
+            <span class="icon iconBurger"></span>
+          </button>
+          <nav class="navigation">
+            <h2 class="a11yHidden">메인 메뉴</h2>
+            <ul class="navigation__list">
+              <li class="navigation__item"><a class="navigation__link" href="./signin.html">로그인</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="./signup.html">회원 가입</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="./ui-design.html">이디야 디자인</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="./beverages.html">이디야 음료</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="./news.html">이디야 뉴스</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="./store.html">매장 찾기</a></li>
+            </ul>
+            <button type="button" class="buttonNone buttonClose" title="닫기" aria-label="메인 메뉴 닫기">
+              <span class="icon iconClose" aria-hidden="true"></span>
+            </button>
+          </nav>
+        </div>
+      </header>
+      <main class="main">
+        <div class="signup">
+          <section class="membership">
+            <h2 class="membership__title">회원가입</h2>
+            <p class="membership__enDescription" lang="en">Join Us, Ediya Coffee</p>
+            <p class="membership__description">이디야멤버스 가입을 진행합니다.</p>
+            <form action="#" method="POST" class="memberForm">
+              <fieldset>
+                <legend>회원가입 폼</legend>
+                <div class="membership__email">
+                  <div class="formControl">
+                    <!-- aria-invalid 속성은 1.2에서 global 속성에서 widget 계열의 역할에만 사용되도록 범위가 축소 되었음. -->
+                    <input class="input" type="email" id="userEmail" name="userEmail" required aria-required="true" aria-invalid="false" aria-describedby="emailFeedback" autocomplete="email" />
+                    <label class="label" for="userEmail">이메일</label>
+                    <span class="iconNone"></span>
+                    <span class="icon iconChecked"></span>
+                    <span class="icon iconWarning"></span>
+                  </div>
+                  <span role="alert" id="emailFeedback" class="errorMessage">이메일 입력 방법이 잘못되었습니다. (예: user@domain.io)</span>
+                </div>
+                <div class="membership__password">
+                  <div class="formControl">
+                    <input class="input" type="password" id="userPassword" name="userPassword" required aria-required="true" aria-invalid="false" aria-describedby="passwordFeedback" autocomplete="new-password" />
+                    <label class="label" for="userPassword">패스워드</label>
+                    <!-- visible, invisible 상태에 따라 aria-label이 변경되도록 자바스크립트 설정이 필요함 -->
+                    <button type="button" class="buttonNone buttonPassword" aria-label="패스워드 보기"><span class="icon iconVisible"></span></button>
+                    <span class="iconNone"></span>
+                    <span class="icon iconChecked"></span>
+                    <span class="icon iconWarning"></span>
+                  </div>
+                  <span role="alert" id="passwordFeedback" class="errorMessage">패스워드는 숫자, 영어 조합 6자 이상 입력해야 합니다.</span>
+                </div>
+                <!-- 패스워드 확인의 경우 기존 패스워드와 일치하는지 여부를 검증하는 절차가 필요함. -->
+                <div class="membership__passwordConfirm">
+                  <div class="formControl">
+                    <input class="input" type="password" id="userPasswordConfirm" name="userPasswordConfirm" required aria-required="true" aria-invalid="false" aria-describedby="passwordFeedbackConfirm" autocomplete="new-password" />
+                    <label class="label" for="userPasswordConfirm">패스워드 확인</label>
+                    <!-- visible, invisible 상태에 따라 aria-label이 변경되도록 자바스크립트 처리가 필요함 -->
+                    <button type="button" class="buttonNone buttonPassword" aria-label="패스워드 보기"><span class="icon iconInVisible"></span></button>
+                    <span class="iconNone"></span>
+                    <span class="icon iconChecked"></span>
+                    <span class="icon iconWarning"></span>
+                  </div>
+                  <span role="alert" id="passwordFeedbackConfirm" class="errorMessage">패스워드가 일치하지 않습니다.</span>
+                </div>
+                <div class="membership__buttons buttonGroup">
+                  <!-- a 요소를 사용할 경우 disable 상태에 대한 처리 고민 ? -->
+                  <button type="submit" class="button buttonSignup buttonPrimary">가입하기<span class="icon iconLoading"></span></button>
+                  <button type="submit" class="button buttonSignin buttonOutline" disabled="disabled">로그인<span class="icon iconArrowWhite"></span></button>
+                </div>
+              </fieldset>
+            </form>
+          </section>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer__inner">
+          <div class="footer__logo">
+            <img src="./../images/brand-dark.svg" alt="EDIYA COFFEE" />
+          </div>
+          <div class="privacy">
+            <ul class="privacy__list">
+              <li class="privacy__item"><a class="privacy__link" href="#">개인정보처리방침</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">멤버스 이용약관</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">가맹 안내</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">대량쿠폰구매</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">채용안내</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">고객의 소리</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">사이트맵</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">점주의 방</a></li>
+            </ul>
+          </div>
+          <address class="address">
+            <span class="address__content">서울특별시 강남구 논현로 636 이디야빌딩(서울특별시 강남구 논현동 221-17)</span>
+            <span class="address__content"><b>TEL : </b>02-543-6467</span>
+            <span class="address__content"><b>FAX : </b>02-543-7191</span>
+            <span class="address__content"><b>사업자등록번호 : </b>107-86-16302</span>
+            <span class="address__content"><b>통신판매업 신고 : </b>강남 제 002519호</span>
+            <span class="address__content"><b>대표이사 : </b>문창기</span>
+          </address>
+          <small class="copyright">&copy; 2017 EDIYA COFFEE COMPANY. ALL RIGHTS RESERVED..</small>
+        </div>
+      </footer>
+    </div>
+  </body>
+
+</html>

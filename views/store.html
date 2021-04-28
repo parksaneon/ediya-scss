@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>매장찾기 - 이디야 커피(Ediya Coffee)</title>
+    <meta name="description" content="이디야 커피 브랜드 사이트 (학습용) 홈페이지입니다." />
+    <meta name="keywords" content="이디야, 커피, 브랜드, 사이트, 학습용, 홈페이지, 이듬, 블렌디드 러닝" />
+    <meta name="author" content="이듬(E.UID)" />
+    <!-- 스타일링 -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="shortcut icon" href="./../images/favicon.png" type="image/x-icon" />
+  </head>
+
+  <body>
+    <div class="ediya">
+      <header class="header">
+        <div class="header__inner">
+          <h1 class="header__logo">
+            <a href="../index.html"><img src="../images/brand.svg" alt="Ediya Coffee" class="responsiveImg" /></a>
+          </h1>
+          <button type="button" class="buttonNone buttonBurger" aria-label="메뉴 열기" title="메뉴 열기">
+            <span class="icon iconBurger"></span>
+          </button>
+          <nav class="navigation">
+            <h2 class="a11yHidden">메인 메뉴</h2>
+            <ul class="navigation__list">
+              <li class="navigation__item"><a class="navigation__link" href="./signin.html">로그인</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="./signup.html">회원 가입</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="./ui-design.html">이디야 디자인</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="./beverages.html">이디야 음료</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="./news.html">이디야 뉴스</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="./store.html">매장 찾기</a></li>
+            </ul>
+            <button type="button" class="buttonNone buttonClose" title="닫기" aria-label="메인 메뉴 닫기">
+              <span class="icon iconClose" aria-hidden="true"></span>
+            </button>
+          </nav>
+        </div>
+      </header>
+      <main class="main">
+        <section class="store">
+          <h2 class="a11yHidden">이디야 매장 검색 및 위치</h2>
+          <div class="store__search">
+            <div class="tabUI store__tabUI">
+              <ul class="tabUI__tabList" role="tablist" aria-label="이디야 매장 검색 탭 메뉴">
+                <li role="none" class="tabUI__tabItem">
+                  <a class="tabUI__tab" href="#storeName" role="tab" id="storeTab01" aria-controls="storeNameSearch" aria-selected="true">점포명</a>
+                </li>
+                <li role="none" class="tabUI__tabItem">
+                  <a class="tabUI__tab" href="#storeAddress" role="tab" id="storeTab02" aria-controls="storeAddressSearch" aria-selected="false">주소</a>
+                </li>
+              </ul>
+            </div>
+            <div class="store__panel storeName is--selected" id="storeNameSearch">
+              <form class="searchForm" action="#" method="GET">
+                <fieldset>
+                  <legend>점포명으로 매장 검색 폼</legend>
+                  <div class="store__searchWrapper">
+                    <div class="formControl">
+                      <input type="search" name="storeNameKeyword" class="input" placeholder="검색어 입력(예: 길음)" aria-required="true" aria-label="점포명 검색" id="storeNameKeyword" autofocus="true" />
+                      <label class="label a11yHidden" for="storeNameKeyword">점포명 검색</label>
+                      <button type="button" class="buttonNone buttonSearch" aria-label="검색">
+                        <span class="icon iconSearch"></span>
+                      </button>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+            <div class="store__panel storeAddress" id="storeAddressSearch">
+              <form class="searchForm" action="#" method="GET">
+                <fieldset>
+                  <legend>주소로 매장 검색 폼</legend>
+                  <div class="store__searchWrapper">
+                    <div class="formControl">
+                      <input type="search" name="storeAddressKeyword" class="input" placeholder="검색어 입력(예: 성북구 도봉로)" aria-required="true" aria-label="주소로 검색" id="storeAddressKeyword" />
+                      <label class="label a11yHidden" for="storeAddressKeyword">주소로 검색</label>
+                      <button type="button" class="buttonNone buttonSearch" aria-label="검색">
+                        <span class="icon iconSearch"></span>
+                      </button>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+            <div class="store__searchResult">
+              <ul class="store__list">
+                <li class="store__item">
+                  <div class="card">
+                    <figure class="card__thumbnail">
+                      <img class="responsiveImg" src="../images/store-thumbnail.jpg" alt="" />
+                      <!--  썸네일 이미지를 SVG 포맷을 사용할 경우 responsiveImg 대신 responsiveSvg 클래스를 지정해야 한다. -->
+                      <!-- <img class="responsiveSvg" src="../images/store-thumbnail.svg" alt="" /> -->
+                    </figure>
+                    <dl class="card__content">
+                      <dt class="card__headline"><a href="#" role="button" class="card__link">길음 뉴타운점</a></dt>
+                      <dd class="card__description">서울 성북구 길음로 74 (길음동, 길음 에스에이치빌)</dd>
+                    </dl>
+                  </div>
+                </li>
+                <li class="store__item">
+                  <div class="card">
+                    <figure class="card__thumbnail">
+                      <img class="responsiveImg" src="../images/store-thumbnail.jpg" alt="" />
+                      <!--  썸네일 이미지를 SVG 포맷을 사용할 경우 responsiveImg 대신 responsiveSvg 클래스를 지정해야 한다. -->
+                      <!-- <img class="responsiveSvg" src="../images/store-thumbnail.svg" alt="" /> -->
+                    </figure>
+                    <dl class="card__content">
+                      <dt class="card__headline"><a href="#" role="button" class="card__link">길음 중앙점</a></dt>
+                      <dd class="card__description">서울 성북구 도봉로 11 (길음동, 상주빌딩)</dd>
+                    </dl>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="store__map">
+            <figure class="iframeWrapper iframe1-1">
+              <iframe class="iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3160.676332998653!2d127.01842291539721!3d37.60977587978994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbc8c8d5ae07f%3A0x8719b6556e5fc3b4!2z7J2065SU7JW8IOq4uOydjOuJtO2DgOyatOygkA!5e0!3m2!1sko!2skr!4v1601627418910!5m2!1sko!2skr" frameborder="0" allowfullscreen aria-hidden="false" tabindex="0" aria-label="길음 뉴타운점 지도"></iframe>
+            </figure>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="footer__inner">
+          <div class="footer__logo">
+            <img src="./../images/brand-dark.svg" alt="EDIYA COFFEE" />
+          </div>
+          <div class="privacy">
+            <ul class="privacy__list">
+              <li class="privacy__item"><a class="privacy__link" href="#">개인정보처리방침</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">멤버스 이용약관</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">가맹 안내</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">대량쿠폰구매</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">채용안내</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">고객의 소리</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">사이트맵</a></li>
+              <li class="privacy__item"><a class="privacy__link" href="#">점주의 방</a></li>
+            </ul>
+          </div>
+          <address class="address">
+            <span class="address__content">서울특별시 강남구 논현로 636 이디야빌딩(서울특별시 강남구 논현동 221-17)</span>
+            <span class="address__content"><b>TEL : </b>02-543-6467</span>
+            <span class="address__content"><b>FAX : </b>02-543-7191</span>
+            <span class="address__content"><b>사업자등록번호 : </b>107-86-16302</span>
+            <span class="address__content"><b>통신판매업 신고 : </b>강남 제 002519호</span>
+            <span class="address__content"><b>대표이사 : </b>문창기</span>
+          </address>
+          <small class="copyright">&copy; 2017 EDIYA COFFEE COMPANY. ALL RIGHTS RESERVED..</small>
+        </div>
+      </footer>
+    </div>
+  </body>
+
+</html>
