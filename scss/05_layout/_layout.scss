@@ -1,16 +1,14 @@
 // .ediya 컨테이너 레이아웃 시작---------------------------------------------------------- /
-<<<<<<< HEAD
-.ediya{
+.ediya {
     @include flexbox(column);
     min-height: 100vh;
-    @at-root .main{
-        flex: 1 1 0;
+  
+    @at-root .main {
+      flex: 1 1 0;
     }
-    @at-root .footer{
-        margin-top: auto;
+  
+    @at-root .footer {
+      margin-top: auto;
     }
-}
-=======
-
->>>>>>> 2145a6c421f87f4de4234b2f648dca3837aa0492
-// .ediya 컨테이너 레이아웃 종료---------------------------------------------------------- /
+  }
+  // .ediya 컨테이너 레이아웃 종료---------------------------------------------------------- /
