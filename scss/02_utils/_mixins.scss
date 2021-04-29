@@ -1,12 +1,30 @@
 // Float 해제를 위한 clear 스타일 ---------------------------------------------------- /
 
-
 // Auto Margin을 활용한 박스 가운데 정렬 ------------------------------------------------ /
-
+@mixin autoMargin($marginX: auto) {
+  margin-left: $marginX;
+  margin-right: $marginX;
+}
 
 // 요소 박스의 가로 크기를 뷰포트 기준 100vw로 설정 -------------------------------------------- /
 
-
 // 요소 박스의 크기 고정 ----------------------------------------------------------- /
+@mixin boxFixed($width: 740px, $paddingX: 0) {
+  width: $width;
+  padding-left: $paddingX;
+  padding-right: $paddingX;
+  @include autoMargin();
+  @content;
+}
 
+/* 반응형 이미지(비트맵) ------------------------------------------------------------- */
+@mixin responsiveImg {
+  max-width: 100%;
+  height: auto;
+}
 
+/* 반응형 미디어(벡터, 비디오, iframe) ------------------------------------------------- */
+@mixin responsiveMedia {
+  width: 100%;
+  height: auto;
+}
