@@ -1,3 +1,64 @@
 // 내비게이션 시작 --------------------------------------------------------------------- /
-
+.navigation{
+    @include mobile{
+        overflow-y: auto;
+        position: fixed;
+        top: 0;
+        left: 150vw;
+        right: -150vw;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1000;
+        padding-top: 60px;
+        background: $grayscaleDarkGray2;
+        color: $grayscaleWhite;
+        transition: right 0.4s cubic-bezier(0.79, 0.14, 0.15, 0.86),
+          left 0.4s cubic-bezier(0.79, 0.14, 0.15, 0.86);
+        backdrop-filter: blur(2px);
+      }
+      &.is--active{
+        @include mobile{
+          left: 0;
+          right: 0;
+        }
+      }
+      &__list{
+          @include desktop{
+              @include flexbox
+          }
+      }
+      &__item{
+        @include mobile{
+          border-bottom: 1px solid rgba($primaryBlue5, 0.5);
+        }
+        
+        @include desktop{
+          margin-left: em(8);
+          color: $primaryBlue;
+        }
+      }
+      &__link{
+        @include focusVisible;
+        display: block;
+        
+        @include mobile{
+          font-size: rem(14px);
+          padding: em(12, 14) em(22, 14);
+          transition: all 0.4s ease;
+        }
+        &:hover, 
+        &:focus{
+          @include mobile{
+            background: $primaryBlue6;
+          }
+        }
+    
+        @include desktop{
+          @include flexbox;
+          font-size: rem(15);
+          padding: em(8, 15);
+        }
+      }
+}
 // 네비게이션 종료 ------------------------------------------------------------------ /

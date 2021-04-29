@@ -1,3 +1,46 @@
 // 헤더 시작 ------------------------------------------------------------------------ /
+.header{
+  padding: 2px 0;
+  background: $grayscaleWhite;
+  border: 0.5px solid $grayscaleSnow;
+  box-shadow: 0px 1px 1px rgba($black, 0.1);
 
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  
+  &__inner{
+      @include flexbox($justify-content: space-between, $align-items: center);
+      @include desktop{
+        @include boxFixed;
+      }
+  }
+  &__logo{
+    width: 176px;
+    @include mobile{
+        width: percentage(176/375);
+        max-width: 176px;
+    }
+    @include desktop{
+        position: relative;
+        left: em(18px);
+    }
+    a{
+        @include focus;
+        display: block;
+        padding: em(18px);
+    }
+    img{
+        @include responsiveimg;
+    }
+  }
+  .buttonBurger{
+    @include mobile{
+        padding: em(17px);
+    }
+    @include desktop{
+        display: none;
+    }
+  }
+}
 // 헤더 종료 --------------------------------------------------------------------- /

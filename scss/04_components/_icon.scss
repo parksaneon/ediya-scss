@@ -1,3 +1,26 @@
 // 아이콘 스타일 시작 ------------------------------------------------------------------ /
-
+.icon{
+    position: relative;
+    display: inline-block;
+    width: em(16);
+    height: em(16);
+    &::before{
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(./../../images/button-navigation.svg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: cover;
+    }
+    // iconBurger
+    &Burger{
+        &::before{
+            background-image: url(./../../images/button-navigation.svg);
+        }
+    }
+}
 // 아이콘 스타일 종료------------------------------------------------------------------ /

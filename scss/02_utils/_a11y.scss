@@ -15,3 +15,16 @@
 }
 
 // 포커스, 포커스 비저블, 포커스 위드인 ----------------------------------------------------- /
+@mixin focus {
+  &:focus{
+    outline: 0;
+    border-radius: 2px;
+    box-shadow: 0 0 0 2px rgba($primaryBlue4, 0.8);
+  }
+}
+@mixin focusVisible {
+  @include focus;
+  &:focus:not(:focus-visible){
+    box-shadow: none;
+  }
+}
