@@ -1,3 +1,81 @@
 // 푸터 시작 --------------------------------------------------------------------- /
+.footer {
+  background: $grayscaleBlack;
+  color: $grayscaleGray2;
+  font-size: rem(12);
+  padding-bottom: em(30, 12);
+  text-align: center;
 
+  &__inner {
+    @include flexbox(column);
+  }
+
+  &__logo {
+    @include autoMargin;
+    @include mobile {
+      width: 160px;
+      margin-top: em(25);
+    }
+    @include desktop {
+      width: 180px;
+      margin-top: em(30);
+    }
+    img {
+      @include responsiveMedia;
+    }
+  }
+
+  .privacy {
+    order: -1;
+    border-bottom: 1px solid rgba($grayscaleGray3, 0.5);
+    @include mobile {
+      padding: em(10) em(18);
+    }
+    @include desktop {
+      padding: em(18) 0;
+    }
+    // 개인정보 목록 ----------------------------------------------------------------- /
+    &__list {
+      @include flexbox(row, center, center, wrap);
+      @include mobile {
+        justify-content: flex-start;
+      }
+    }
+
+    // 개인정보 목록 링크 ----------------------------------------------------------------- /
+    &__link {
+      @include focusVisible;
+      display: block;
+      padding: em(2) em(4);
+      margin: em(4);
+    }
+  }
+
+  .address {
+    margin-top: em(17);
+    line-height: 1.6;
+
+    &__content {
+      display: inline-block;
+      margin-bottom: em(5);
+      margin-right: em(11);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .copyright {
+    font-size: rem(11);
+    line-height: 1.6;
+
+    @include mobile {
+      margin-top: em(15, 11);
+    }
+    @include desktop {
+      margin-top: em(20, 11);
+    }
+  }
+}
 // 푸터 종료 --------------------------------------------------------------------- /
