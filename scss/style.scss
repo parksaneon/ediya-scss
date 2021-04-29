@@ -5,10 +5,3 @@
 @import './04_components/';
 @import './05_layout/';
 @import './06_pages/';
-
-body{
-    background: yellow;    
-    @include mobile {
-        background: pink;
-    }
-}

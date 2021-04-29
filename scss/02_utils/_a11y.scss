@@ -1,5 +1,5 @@
 // 숨김 제목 및 콘텐츠 --------------------------------------------------------------- /
-@mixin a11yHidden(){
+@mixin a11yHidden() {
   overflow: hidden;
   position: absolute !important;
   clip: rect(0, 0, 0, 0);
@@ -10,21 +10,21 @@
 }
 
 // 숨김 콘텐츠 -------------------------------------------------------------------- /
-.a11yHidden{
+.a11yHidden {
   @include a11yHidden();
 }
 
 // 포커스, 포커스 비저블, 포커스 위드인 ----------------------------------------------------- /
 @mixin focus {
-  &:focus{
+  &:focus {
     outline: 0;
     border-radius: 2px;
-    box-shadow: 0 0 0 2px rgba($primaryBlue4, 0.8);
+    box-shadow: 0 0 0 2px rgba($primaryBlue2, 0.8);
   }
 }
 @mixin focusVisible {
   @include focus;
-  &:focus:not(:focus-visible){
+  &:focus:not(:focus-visible) {
     box-shadow: none;
   }
 }
