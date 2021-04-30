@@ -1,13 +1,61 @@
 // 폼 서식 그룹 시작 ------------------------------------------------------------------- /
-
+// 폼 서식 그룹 ------------------------------------------------------------------- /
+.formControl{
+  position: relative;
+  @include flexbox(row, flex-start, center, nowrap);
+}
 
 // 레이블 ----------------------------------------------------------------------- /
-
+.label{
+  font-size: rem(18px);
+  order: -1;
+}
 
 // 입력 서식 --------------------------------------------------------------------- /
+.input{
+  -webkit-appearance: none;
+  width: 100%;
+  flex: 1 1 0;
+  font-size: rem(16px);
+  border: 0;
+  padding: 6px 0 2px 8px;
+  border: 0;
+  margin-right: 8px;
+  background: transparent;
 
+  // IE input 요소의 X 버튼 제거 
+  &::-ms-clear, 
+  &::-ms-reveal {
+    display: none;
+  }
+}
+.checkbox{
+  opacity: 0;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: transparent;
+  cursor: pointer;
+}
 
+// .checkbox 뒤에 .label 요소가 있을 경우
+.checkbox ~ .label{
+  margin-top: 3px;
+  margin-left: 20px;
+  cursor: pointer;
+}
 
-// 체크박스 ---------------------------------------------------------------------- /
-
-// 폼 서식 그룹 종료 ------------------------------------------------------------------- /
+// .checkbox를 숨겼을 때 .icon 영역을 체크박스 요소로 보여지도록 설정
+.checkbox + .icon{
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-right: 8px;
+}
