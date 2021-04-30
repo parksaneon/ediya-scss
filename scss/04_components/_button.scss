@@ -5,5 +5,17 @@
     padding: 0;
     background: transparent;
   }
+  &Primary{
+    background: $grayscaleWhite;
+    color: $primaryBlue;
+
+    &.is--disabled{
+      background: $grayscaleSnow;
+      color: $accentAmber;
+      .icon::before{
+        background-image: url(../images/icon-arrow-amber.svg);
+      }
+    }
+  }
 }
 // 버튼 종료 ----------------------------------------------------------------- /

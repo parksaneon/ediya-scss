@@ -1,16 +1,16 @@
 // ------ 로그인 시작 ------//
 .signin{
-    flex: 1 1 0;
-    color: $grayscaleWhite;
-    padding: em(20);
-    background-repeat: no-repeat;
-    background-position: 50% 0;
-    background-size: cover;
-    @include mobile{
-        background-image: url(../images/coffee-mobile.jpg);
-    }
-    @include desktop{
-        background-image: url(../images/coffee-desktop.jpg);
-    }
+  flex: 1 1 0;
+  color: $grayscaleWhite;
+  padding: em(20);
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  @include mobile{
+    background-image: url(../images/coffee-mobile.jpg);
+  }
+  @include desktop{
+    background-image: url(../images/coffee-desktop.jpg);
+  }
 }
 // ------ 로그인 종료 ------//

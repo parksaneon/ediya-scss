@@ -525,7 +525,7 @@ template {
 
 /* 반응형 이미지(비트맵) ------------------------------------------------------------- */
 /* 반응형 미디어(벡터, 비디오, iframe) ------------------------------------------------- */
-/* 반응형 iframe ------------------------------------------------- */
+/* 반응형 iframe --------------------------------------------------------------- */
 html {
   font-size: 16px;
   overflow-y: visible;
@@ -658,6 +658,67 @@ button {
   background-image: url(../images/icon-arrow-white.svg);
 }
 
+.formControl {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.label {
+  font-size: 1.125rem;
+  order: -1;
+}
+
+.input {
+  -webkit-appearance: none;
+  width: 100%;
+  flex: 1 1 0;
+  font-size: 1rem;
+  border: 0;
+  padding: 6px 0 2px 8px;
+  border: 0;
+  margin-right: 8px;
+  background: transparent;
+}
+.input::-ms-clear, .input::-ms-reveal {
+  display: none;
+}
+
+.checkbox {
+  opacity: 0;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: transparent;
+  cursor: pointer;
+}
+
+.checkbox ~ .label {
+  margin-top: 3px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.checkbox + .icon {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-right: 8px;
+}
+
+.membership {
+  background: blue;
+}
 @media screen and (min-width: 768px) {
   .membership {
     width: 540px;
@@ -674,7 +735,7 @@ button {
 .membership__title {
   font-weight: 100;
   font-size: 2.25rem;
-  margin: 3.125em 0 1.5em;
+  margin: 1.3888888889em 0 0.6666666667em;
 }
 .membership__enDescription {
   font-size: 1.125rem;
@@ -697,6 +758,43 @@ button {
 }
 .membership__email .formControl:focus-within, .membership__password .formControl:focus-within, .membership__passwordConfirm .formControl:focus-within {
   box-shadow: 0 1px 0 0 currentColor, 0 2px 0 0 currentColor;
+}
+.membership .input {
+  padding: 1.375em 0.5em 0.5em;
+}
+.membership .input:focus {
+  outline: none;
+}
+.membership .button:focus, .membership .buttonNone:focus {
+  outline: 0;
+  border-radius: 2px;
+  box-shadow: 0 0 0 2px rgba(91, 106, 169, 0.8);
+}
+.membership .errorMessage {
+  display: none;
+  font-size: 0.75rem;
+  padding: 8px 0 3px 8px;
+}
+.membership__email.is--invalid .errorMessage, .membership__password.is--invalid .errorMessage, .membership__passwordConfirm.is--invalid .errorMessage {
+  display: block;
+}
+.membership__email .input:focus + .label, .membership__email.is--valid .label, .membership__email.is--invalid .label, .membership__password .input:focus + .label, .membership__password.is--valid .label, .membership__password.is--invalid .label, .membership__passwordConfirm .input:focus + .label, .membership__passwordConfirm.is--valid .label, .membership__passwordConfirm.is--invalid .label {
+  position: absolute;
+  transition: all 300ms;
+  font-size: 0.8125rem;
+  transform: translate(8px, -16px);
+}
+.membership .label ~ .icon,
+.membership .buttonPassword,
+.membership .buttonPassword ~ .icon {
+  position: relative;
+  top: 6px;
+}
+.membership__saveEmail {
+  margin-top: 15px;
+}
+.membership__saveEmail .label {
+  font-size: 0.75rem;
 }
 
 .ediya {
@@ -1014,7 +1112,7 @@ button {
 .promotionYoutube .iframeWrapper {
   position: relative;
   width: 100%;
-  height: 0 i !important;
+  height: 0 !important;
   padding-top: 56.25%;
 }
 .promotionYoutube .iframeWrapper iframe {
@@ -1033,11 +1131,6 @@ button {
     background: linear-gradient(137.4deg, #263d83 3.86%, #102457 100%);
   }
 }
-@media screen and (min-width: 768px) {
-  .promotion__wrapper {
-    width: 375px;
-  }
-}
 .promotionNotice {
   position: relative;
   display: flex;
@@ -1048,7 +1141,7 @@ button {
 }
 .promotionNotice__title {
   min-width: 125px;
-  padding: 0.9375em 0 0 15;
+  padding: 0.9375em 0 0 0.9375em;
   background: linear-gradient(137.4deg, #263d83 3.86%, #102457 100%);
   font-size: 0.9375rem;
   font-weight: 700;
@@ -1084,6 +1177,47 @@ button {
   justify-content: flex-start;
   align-items: stretch;
   flex-wrap: nowrap;
+}
+.promotionNews {
+  position: relative;
+  background-color: #24388d;
+  color: #fefefe;
+  font-size: 0.8125rem;
+  padding: 0.9375em;
+}
+.promotionNews__title {
+  font-weight: bold;
+  margin: 0 0 15px 0;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #fefefe;
+}
+.promotionNews__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-top: 5px;
+}
+.promotionNews__item:first-child {
+  margin-top: 0;
+}
+.promotionNews__headline {
+  flex-grow: 1;
+  margin-right: 25px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.promotionNews__date {
+  font-size: 0.75rem;
+  min-width: 62px;
+}
+.promotionNews .svgLinkIconMore {
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 
 .signin {

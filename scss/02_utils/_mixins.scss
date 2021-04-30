@@ -29,6 +29,7 @@
   height: auto;
 }
 
+<<<<<<< HEAD
 /* 반응형 iframe ------------------------------------------------- */
 @mixin responsiveiframe {
   position: relative;
@@ -36,6 +37,15 @@
   height: 0 i !important;
   padding-top: 56.25%;
   iframe{
+=======
+/* 반응형 iframe --------------------------------------------------------------- */
+@mixin responsiveIframe {
+  position: relative;
+  width: 100%;
+  height: 0 !important;
+  padding-top: 56.25%;
+  iframe {
+>>>>>>> 7412ecadc1df64a95d43e87f2905a59f32ffd72b
     position: absolute;
     top: 0;
     right: 0;
@@ -44,4 +54,8 @@
     width: 100%;
     height: 100%;
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7412ecadc1df64a95d43e87f2905a59f32ffd72b
