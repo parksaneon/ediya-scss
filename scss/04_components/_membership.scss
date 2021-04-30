@@ -1,6 +1,5 @@
 // 로그인, 회원가입 (.membership) 공통 시작 ------------------------------------------------ /
 .membership{
-  background: blue;
   @include desktop{
     @include boxFixed(540px);
   }
@@ -52,9 +51,14 @@
     }
   }
   
+  .buttonPassword{
+    height: 16px;
+  }
+
   .button, .buttonNone{
     @include focus;
   }
+
   
   // 에러 메시지 -------------------------------------------------------------------- /
   .errorMessage{
@@ -89,9 +93,35 @@
      top: 6px;
    }
    &__saveEmail{
-    margin-top: 15px;
     .label{
-      font-size: rem(12px);
+      margin-left: 25px;
+    }
+    .checkbox{
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      z-index: 100;
+    }
+
+    .iconToggle{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background-image: url(../images/icon-unchecked-square.svg);
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: 100% 100%;
+    }
+    .checkbox:checked + .iconToggle{
+      background-image: url(../images/icon-checked-square.svg);
+    }
+    .checkbox:focus + .iconToggle{
+      border: 2px solid red;
     }
   }
 }

@@ -29,33 +29,33 @@
     display: none;
   }
 }
-.checkbox{
-  opacity: 0;
-  width: 16px;
-  height: 16px;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  background: transparent;
-  cursor: pointer;
-}
+// .checkbox{
+//   opacity: 0;
+//   width: 16px;
+//   height: 16px;
+//   padding: 0;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   z-index: 100;
+//   background: transparent;
+//   cursor: pointer;
+// }
 
 // .checkbox 뒤에 .label 요소가 있을 경우
-.checkbox ~ .label{
-  margin-top: 3px;
-  margin-left: 20px;
-  cursor: pointer;
-}
+// .checkbox ~ .label{
+//   margin-top: 3px;
+//   margin-left: 20px;
+//   cursor: pointer;
+// }
 
 // .checkbox를 숨겼을 때 .icon 영역을 체크박스 요소로 보여지도록 설정
-.checkbox + .icon{
-  width: 16px;
-  height: 16px;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-right: 8px;
-}
+// .checkbox + .icon{
+//   width: 16px;
+//   height: 16px;
+//   padding: 0;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   margin-right: 8px;
+// }
