@@ -1,8 +1,8 @@
 {
   "scripts": {
     "start": "run-p dev watch:**",
-    "htmlhint": "htmlhint '**/*.html'",
-    "watch:htmlhint": "SHELL=/bin/bash chokidar --initial --silent '**/*.html' -c 'npm run htmlhint'",
+    "htmlhint": "htmlhint **\\*.html",
+    "watch:htmlhint": ".\\node_modules\\.bin\\chokidar --initial --silent **\\*.html -c \"npm run htmlhint\"",
     "sass": "sass scss:css",
     "watch:sass": "npm run sass -- --watch",
     "dev": "live-server",

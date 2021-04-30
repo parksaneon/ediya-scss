@@ -1,3 +1,71 @@
 // 로그인, 회원가입 (.membership) 공통 시작 ------------------------------------------------ /
+.membership{
+    @include desktop{
+        @include boxFixed(540px);
+    }
 
+    &__title,
+    &__enDescription,
+    &__description{
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    // 제목 스타일 ----------------------------------------------------------------- /
+    &__title{
+        font-weight: 100;
+        font-size: rem(36px);
+        margin: em(50) 0 em(24);
+    }
+
+    // 영문 단락 스타일 ----------------------------------------------------------------- /
+    &__enDescription{
+        font-size: rem(18px);
+    }
+
+    // 단락 스타일 -------------------------------------------------------------------- /
+    &__description{
+        font-size: rem(12px);
+    }
+    &__email,
+    &__password,
+    &__passwordConfirm{
+      @include mobile{
+        margin-top: 52px;
+      }
+      @include desktop{
+        margin-top: 42px;
+      }
+      .formControl{
+        border-bottom: 2px solid $grayscaleWhite;
+      }
+      .formControl:focus-within {
+        box-shadow: 0 1px 0 0 currentColor, 0 2px 0 0 currentColor;
+      }
+    }
+    .input{
+        color: $grayscaleWhite;
+        height: 48px;
+        padding: em(22) em(8) em(8);
+        &:focus{
+          outline: none;
+        }
+    }
+    .errorMessage{
+        display: none;
+        font-size: rem(12px);
+        padding: 8px 0 3px 8px;
+    }
+    &__email,
+    &__password,
+    &__passwordConfirm{
+  
+      // 입력 값이 오류일 에러메시지가 보이도록 설정
+      &.is--invalid{
+        .errorMessage{
+          display: block;
+        }
+      }
+    }
+}
 // 로그인, 회원가입 (.membership) 공통 종료------------------------------------------------ /

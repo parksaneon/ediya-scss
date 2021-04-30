@@ -1,3 +1,76 @@
 // 이디야 홈(메인 페이지) 시작 ------------------------------------------------------------- /
-
+.promotion{
+    @include desktop{
+        background: $grayscaleSnow;
+    }
+    &__inner{
+        @include desktop{
+          @include boxFixed(768px, 14px);
+          @include flexbox(row, center);
+          padding-top: em(60);
+          padding-bottom: em(60);
+        }
+      }
+    &Youtube{
+        .iframeWrapper{
+            @include responsiveiframe
+        }
+        @include desktop{
+            width: 365px;
+            // 디자인 시안에서 발생한 오차로 인한 최소 높이 및 배경 설정 
+            min-height: 205px;
+            background: $gradientBlue;
+        }
+    }
+    &__wrapper{
+        @include desktop{
+          width: 375px;
+        }
+    }
+    &Notice{
+        position: relative;
+        @include flexbox;
+      
+        &__title{
+          min-width: 125px;
+          padding: em(15) 0 0 (15);
+          background: $gradientBlue;
+          font-size: rem(15px);
+          font-weight: 700;
+          color: $grayscaleWhite;
+        }
+        
+        &__section{
+          flex-grow: 1;
+          padding: 15px 20px 15px 15px;
+          background: $grayscaleWhite;
+        }
+        
+        &__subTitle{
+          font-weight: 700;
+          color: $primaryBlue;
+          margin: 0;
+        }
+    
+        &__date{
+          font-size: rem(11px);
+          color: $grayscaleGray2;
+        }
+      
+        &__brief{
+          font-size: rem(13px);
+          line-height: 1.5;
+          color: $grayscaleBlack2;
+          letter-spacing: -0.05em;
+          margin: 10px 0 0 0;
+        }
+      
+        .buttonWrapper{
+          position: absolute;
+          bottom: 10px;
+          left: 84px;
+          @include flexbox;
+        }
+      }
+}
 // 이디야 홈(메인 페이지) 종료 ------------------------------------------------------------------ /

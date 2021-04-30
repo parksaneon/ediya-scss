@@ -26,5 +26,75 @@
       content: '×';
     }
   }
+  
+  // 보기 -------------------------------------------------------------------- /
+  &Visible{
+    &::before{
+      background-image: url(../images/icon-visible.svg);
+    }
+  }
+
+  // 감추기 -------------------------------------------------------------------- /
+  &InVisible{
+    &::before{
+      background-image: url(../images/icon-invisible.svg);
+    }
+  }
+
+  // 체크박스 (Square 형) -------------------------------------------------------------------- /
+  &CheckedSquare{
+    &::before{
+      background-image: url(../images/icon-checked-square.svg);
+    }
+  }
+
+  // 체크박스 해제 (Square 형) -------------------------------------------------------------------- /
+  &UncheckedSquare{
+    &::before{
+      background-image: url(../images/icon-unchecked-square.svg);
+    }
+  }
+
+  // 체크 상태 (Circle 형) -------------------------------------------------------------------- /
+  &Checked{
+    &::before{
+      background-image: url(../images/icon-checked.svg);
+    }
+  }
+
+  // 오류 및 경고 상태 -------------------------------------------------------------------- /
+  &Warning{
+    &::before{
+      background-image: url(../images/icon-warning.svg);
+    }
+  }
+
+  // 화살표 (Up) ------------------------------------------------------------ /
+  &ArrowUp{
+    &::before{
+      background-image: url(../images/icon-arrow-up.svg);
+    }
+  }
+
+  // 화살표 (Down) ------------------------------------------------------------ /
+  &ArrowDown{
+    &::before{
+      background-image: url(../images/icon-arrow-down.svg);
+    }
+  }
+
+  // 화살표 (Rignt) ------------------------------------------------------------ /
+  &ArrowDarkBlue{
+    &::before{
+      background-image: url(../images/icon-arrow-darkblue.svg);
+    }
+  }
+
+  // 화살표 (Right) ------------------------------------------------------------ /
+  &ArrowWhite{
+    &::before{
+      background-image: url(../images/icon-arrow-white.svg);
+    }
+  }
 }
 // 아이콘 스타일 종료------------------------------------------------------------------ /
