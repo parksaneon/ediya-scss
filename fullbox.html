@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전체 영역을 차지하는 박스 구현하기</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .ediya{
+            display: flex;
+            flex-direction: column;
+            width: 1000px;
+            height: 100vh;
+            margin: 0 auto;
+        }
+        .header{
+            background-color: aquamarine;
+            height: 20vh;
+        }
+        .main{
+            background-color: bisque;
+            height: 60vh;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            margin-left: -50%;
+        }
+        .footer{
+            background-color: pink;
+            height: 20vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="ediya">
+        <div class="header">헤더</div>
+        <div class="main">메인</div>
+        <div class="footer">푸터</div>
+    </div>
+</body>
+</html>
